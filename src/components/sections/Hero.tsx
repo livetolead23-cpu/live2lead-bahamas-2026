@@ -76,7 +76,7 @@ export default function Hero() {
           <motion.h1
             {...fadeUp(0.2)}
             className="
-              text-[58px] sm:text-[72px] lg:text-[88px] xl:text-[100px]
+              text-[38px] sm:text-[58px] lg:text-[88px] xl:text-[100px]
               font-black leading-[1.0] tracking-tight
               max-w-[900px]
             "
@@ -147,7 +147,7 @@ export default function Hero() {
           {/* Hosted by badge */}
           <motion.div
             {...fadeIn(0.9)}
-            className="mt-10 flex items-center gap-3"
+            className="mt-10 flex flex-col sm:flex-row items-center gap-1.5 sm:gap-3 text-center sm:text-left"
           >
             <span className="text-[12px] uppercase tracking-[0.18em] text-white/60 font-semibold">
               Hosted by
@@ -156,7 +156,7 @@ export default function Hero() {
               href="https://hephtraining.com/"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-[24px] font-black italic text-white transition-all duration-300 hover:text-orange"
+              className="text-[18px] sm:text-[24px] font-black italic text-white transition-all duration-300 hover:text-orange"
               style={{
                 textShadow: "0 0 18px rgba(255,255,255,0.45), 0 0 40px rgba(255,255,255,0.2)",
               }}

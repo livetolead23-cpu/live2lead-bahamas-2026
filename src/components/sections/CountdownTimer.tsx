@@ -96,11 +96,11 @@ export default function CountdownTimer() {
             The event has begun! 🎉
           </p>
         ) : (
-          <div className="flex items-end gap-4 md:gap-6">
+          <div className="grid grid-cols-4 gap-2 w-full md:flex md:items-end md:gap-6">
             {timeLeft.map((unit, i) => (
-              <span key={unit.label} className="flex items-end gap-4 md:gap-6">
+              <span key={unit.label} className="flex items-end justify-center md:gap-6">
                 <DigitBlock value={unit.value} label={unit.label} />
-                {i < timeLeft.length - 1 && <Divider />}
+                {i < timeLeft.length - 1 && <span className="hidden md:flex"><Divider /></span>}
               </span>
             ))}
           </div>
