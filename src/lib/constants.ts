@@ -49,7 +49,6 @@ export const SPEAKERS: Speaker[] = [
     org:   "",
     role:  "moderator",
     photo: "/images/speakers/ruth-bowe.jpg",
-    bio:   "Ruth Davina Bowe brings energy, poise, and command to the stage as the official moderator of Live2Lead Bahamas 2026. A seasoned communicator and dynamic presence, Ruth guides the flow of the day's sessions — keeping the audience engaged and the program moving with professionalism and warmth.",
   },
 
   // ── Local Speakers (7) — sorted by last name
