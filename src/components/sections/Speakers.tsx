@@ -81,10 +81,20 @@ function SpeakerCard({
       {/* Info panel */}
       <div className="bg-navy-mid p-5 flex flex-col gap-1.5">
 
-        {/* Role label — now below the image */}
-        <span className="text-[10px] font-semibold uppercase tracking-[0.14em] text-orange/70">
-          {roleLabel}
-        </span>
+        {/* Role label + Virtual badge */}
+        <div className="flex items-center gap-2 flex-wrap">
+          <span className="text-[10px] font-semibold uppercase tracking-[0.14em] text-orange/70">
+            {roleLabel}
+          </span>
+          {speaker.virtual && (
+            <span
+              className="text-[10px] font-bold uppercase tracking-[0.12em] px-2 py-0.5 rounded-full"
+              style={{ background: "rgba(79,200,232,0.15)", color: "#4FC8E8", border: "1px solid rgba(79,200,232,0.35)" }}
+            >
+              Virtual Speaker
+            </span>
+          )}
+        </div>
 
         <h3 className="text-[18px] font-bold text-white leading-tight">
           {speaker.name}
@@ -98,14 +108,14 @@ function SpeakerCard({
           </p>
         )}
 
-        {/* Session topic */}
-        {speaker.role !== "host" && (
+        {/* Session topic — only render when topic is confirmed */}
+        {speaker.role !== "host" && speaker.topic && (
           <div className="mt-3 pt-3 border-t border-white/8">
             <p className="text-[10px] uppercase tracking-[0.14em] text-white/30 font-semibold mb-1">
               Session Topic
             </p>
             <p className="text-[13px] text-white/50 italic">
-              {speaker.topic ?? "Coming Soon"}
+              {speaker.topic}
             </p>
           </div>
         )}

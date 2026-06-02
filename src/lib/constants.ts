@@ -28,6 +28,7 @@ export type Speaker = {
   photo?:   string;   // path relative to /public/images/speakers/
   bio?:     string;
   topic?:   string;   // session title / script — add when available
+  virtual?: boolean;  // true = virtual keynote, not in-person
 };
 
 export const SPEAKERS: Speaker[] = [
@@ -101,12 +102,13 @@ export const SPEAKERS: Speaker[] = [
 
   // ── International Speakers (2)
   {
-    name:  "John C. Maxwell",
-    title: "Best-Selling Author & Renowned Leadership Coach",
-    org:   "The John Maxwell Company",
-    role:  "international",
-    photo: "/images/speakers/john-maxwell.jpg",
-    bio:   "John C. Maxwell is a #1 New York Times best-selling author, coach, and speaker who has sold more than 35 million books. Recognized as the world's leading leadership expert by Inc. Magazine and Business Insider, his organizations have trained over 6 million leaders in 180 countries. He will address Live2Lead Bahamas 2026 via a virtual keynote experience.",
+    name:    "John C. Maxwell",
+    title:   "Best-Selling Author & Renowned Leadership Coach",
+    org:     "The John Maxwell Company",
+    role:    "international",
+    virtual: true,
+    photo:   "/images/speakers/john-maxwell.jpg",
+    bio:     "John C. Maxwell is a #1 New York Times best-selling author, coach, and speaker who has sold more than 35 million books. Recognized as the world's leading leadership expert by Inc. Magazine and Business Insider, his organizations have trained over 6 million leaders in 180 countries. He will address Live2Lead Bahamas 2026 via a virtual keynote experience.",
   },
   {
     name:  "Randy Fox, CSP",
