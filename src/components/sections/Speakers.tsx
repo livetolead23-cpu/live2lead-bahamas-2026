@@ -49,7 +49,7 @@ function SpeakerCard({
             src={speaker.photo}
             alt={speaker.name}
             fill
-            className="object-cover object-top transition-transform duration-700 group-hover:scale-105"
+            className={`object-cover transition-transform duration-700 group-hover:scale-105 ${speaker.role === "moderator" ? "object-center" : "object-top"}`}
             sizes="(max-width: 768px) 100vw, (max-width: 1280px) 50vw, 33vw"
           />
         ) : (
@@ -217,8 +217,8 @@ export default function Speakers() {
               <span className="eyebrow text-white/35">Your Moderator</span>
               <div className="h-px flex-1 bg-white/8" />
             </div>
-            <div className="max-w-[480px] mx-auto">
-              <SpeakerCard speaker={moderators[0]} delay={0} featured />
+            <div className="max-w-[320px] mx-auto">
+              <SpeakerCard speaker={moderators[0]} delay={0} />
             </div>
           </div>
         )}
