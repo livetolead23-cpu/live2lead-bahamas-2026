@@ -45,8 +45,8 @@ export const SPEAKERS: Speaker[] = [
   // ── Moderator
   {
     name:  "Ruth Davina Bowe",
-    title: "Event Moderator",
-    org:   "",
+    title: "HR Professional, Maxwell Leadership Coach & Author",
+    org:   "Nassau Cruise Port Ltd.",
     role:  "moderator",
     photo: "/images/speakers/ruth-bowe.jpg",
   },
