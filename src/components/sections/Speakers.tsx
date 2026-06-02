@@ -49,7 +49,8 @@ function SpeakerCard({
             src={speaker.photo}
             alt={speaker.name}
             fill
-            className={`object-cover transition-transform duration-700 group-hover:scale-105 ${speaker.role === "moderator" ? "object-center" : "object-top"}`}
+            className="object-cover transition-transform duration-700 group-hover:scale-105"
+            style={{ objectPosition: speaker.role === "moderator" ? "center 15%" : "center top" }}
             sizes="(max-width: 768px) 100vw, (max-width: 1280px) 50vw, 33vw"
           />
         ) : (
