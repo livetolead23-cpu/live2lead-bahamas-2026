@@ -20,6 +20,7 @@ function SpeakerCard({
 
   const roleLabel =
     speaker.role === "host"          ? "Live2Lead Host"       :
+    speaker.role === "moderator"     ? "Event Moderator"      :
     speaker.role === "international" ? "International Speaker" :
                                        "Local Speaker";
 
@@ -136,6 +137,7 @@ export default function Speakers() {
   const headerInView = useInView(headerRef, { once: true, margin: "-80px" });
 
   const host          = SPEAKERS.filter((s) => s.role === "host");
+  const moderators    = SPEAKERS.filter((s) => s.role === "moderator");
   const localSpeakers = SPEAKERS.filter((s) => s.role === "local");
   const international = SPEAKERS.filter((s) => s.role === "international");
 
@@ -193,7 +195,7 @@ export default function Speakers() {
 
         {/* ── International Speakers ───────────────────────────────── */}
         {international.length > 0 && (
-          <div>
+          <div className="mb-14">
             <div className="flex items-center gap-3 mb-8">
               <div className="h-px flex-1 bg-white/8" />
               <span className="eyebrow text-white/35">International Speakers</span>
@@ -203,6 +205,20 @@ export default function Speakers() {
               {international.map((speaker, i) => (
                 <SpeakerCard key={speaker.name + i} speaker={speaker} delay={i * 0.1} />
               ))}
+            </div>
+          </div>
+        )}
+
+        {/* ── Moderator ────────────────────────────────────────────── */}
+        {moderators.length > 0 && (
+          <div>
+            <div className="flex items-center gap-3 mb-6">
+              <div className="h-px flex-1 bg-white/8" />
+              <span className="eyebrow text-white/35">Your Moderator</span>
+              <div className="h-px flex-1 bg-white/8" />
+            </div>
+            <div className="max-w-[480px] mx-auto">
+              <SpeakerCard speaker={moderators[0]} delay={0} featured />
             </div>
           </div>
         )}

@@ -24,7 +24,7 @@ export type Speaker = {
   name:     string;
   title:    string;
   org:      string;
-  role:     "host" | "local" | "international";
+  role:     "host" | "moderator" | "local" | "international";
   photo?:   string;   // path relative to /public/images/speakers/
   bio?:     string;
   topic?:   string;   // session title / script — add when available
@@ -40,6 +40,16 @@ export const SPEAKERS: Speaker[] = [
     role:  "host",
     photo: "/images/speakers/patrice-taylor.jpg",
     bio:   "With over 30 years of experience in human capital development, Patrice G. Taylor is a certified Maxwell Leadership Coach, DISC Consultant, and best-selling author of The Leadership Renaissance. As founder of Hephzibah Human Capital Solutions, she has dedicated her career to developing transformational leaders across the Caribbean.",
+  },
+
+  // ── Moderator
+  {
+    name:  "Ruth Davina Bowe",
+    title: "Event Moderator",
+    org:   "",
+    role:  "moderator",
+    photo: "/images/speakers/ruth-bowe.jpg",
+    bio:   "Ruth Davina Bowe brings energy, poise, and command to the stage as the official moderator of Live2Lead Bahamas 2026. A seasoned communicator and dynamic presence, Ruth guides the flow of the day's sessions — keeping the audience engaged and the program moving with professionalism and warmth.",
   },
 
   // ── Local Speakers (7) — sorted by last name
