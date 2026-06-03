@@ -7,7 +7,7 @@ export const EVENT = {
   dateISO:      "2026-10-02T08:00:00",   // Countdown target (Bahamas EST -5)
   venue:        "Baha Mar Convention Center",
   city:         "Nassau, Bahamas",
-  registerUrl:  "https://form.jotform.com/261267975500057",
+  registerUrl:  "https://www.fygaro.com/en/pb/c47b079f-b647-49f5-b521-4a03fcafbd72/",
   hostedBy:     "Hephzibah Human Capital Solutions",
 } as const;
 
