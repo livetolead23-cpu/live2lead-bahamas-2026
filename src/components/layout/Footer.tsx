@@ -63,7 +63,7 @@ export default function Footer() {
                 textShadow: "0 0 18px rgba(255,255,255,0.35), 0 0 40px rgba(255,255,255,0.15)",
               }}
             >
-              Hephzibah Capital Solutions
+              Hephzibah Human Capital Solutions
             </a>
             <p className="text-[13px] text-white/55 leading-[1.65] max-w-[240px]">
               Hephzibah Human Capital Solutions is dedicated to developing

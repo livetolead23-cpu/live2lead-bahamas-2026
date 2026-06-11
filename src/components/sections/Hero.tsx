@@ -161,7 +161,7 @@ export default function Hero() {
                 textShadow: "0 0 18px rgba(255,255,255,0.45), 0 0 40px rgba(255,255,255,0.2)",
               }}
             >
-              Hephzibah Capital Solutions
+              Hephzibah Human Capital Solutions
             </a>
           </motion.div>
 

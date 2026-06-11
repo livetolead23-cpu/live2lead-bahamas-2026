@@ -197,7 +197,7 @@ export default function ContactSection() {
                     textShadow: "0 0 16px rgba(255,255,255,0.3)",
                   }}
                 >
-                  Hephzibah Capital Solutions
+                  Hephzibah Human Capital Solutions
                 </a>
                 <p className="text-[13px] text-white/45">hephtraining.com</p>
               </div>

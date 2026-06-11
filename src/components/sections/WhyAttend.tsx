@@ -85,7 +85,7 @@ export default function WhyAttend() {
   const reasonsInView = useInView(reasonsRef, { once: true, margin: "-60px" });
 
   return (
-    <section id="why-attend" className="overflow-hidden bg-navy">
+    <section id="why-attend-section" className="overflow-hidden bg-navy">
 
       {/* ── 1. Full-bleed conference photo strip ── */}
       <div className="relative h-[420px] md:h-[520px] overflow-hidden">
@@ -137,7 +137,7 @@ export default function WhyAttend() {
         </div>
 
         {/* ── 3. Why Attend + past event photo ── */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-20 items-center mt-20 pt-16 border-t border-white/8">
+        <div id="why-attend" className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-20 items-center mt-20 pt-16 border-t border-white/8 scroll-mt-[100px]">
           <motion.div
             initial={{ opacity: 0, x: -30 }}
             animate={introInView ? { opacity: 1, x: 0 } : {}}
