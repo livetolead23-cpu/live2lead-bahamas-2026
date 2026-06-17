@@ -192,7 +192,6 @@ export const TESTIMONIALS = [
   {
     quote:   "Today's conference has been transformative. I am encouraged and inspired to lead more passionately.",
     name:    "Natasha M. Dean",
-    title:   "Attendee",
     company: "Live2Lead Bahamas 2025",
   },
-] as const;
+];
