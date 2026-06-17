@@ -14,10 +14,11 @@ export const EVENT = {
 
 // ─── Navigation Links ────────────────────────────────────────────────
 export const NAV_LINKS = [
-  { label: "About",       href: "#about" },
-  { label: "Speakers",    href: "#speakers" },
-  { label: "Why Attend",  href: "#why-attend" },
-  { label: "Testimonials",href: "#testimonials" },
+  { label: "About",        href: "#about" },
+  { label: "Speakers",     href: "#speakers" },
+  { label: "Why Attend",   href: "#why-attend" },
+  { label: "Testimonials", href: "#testimonials" },
+  { label: "Tickets",      href: "#register" },
 ] as const;
 
 // ─── Speakers ────────────────────────────────────────────────────────
