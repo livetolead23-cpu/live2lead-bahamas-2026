@@ -79,10 +79,17 @@ export default function Hero() {
           </motion.h1>
 
           {/* Theme + tagline */}
-          <motion.div {...fadeUp(0.3)} className="mt-6 flex flex-col gap-2 items-center">
-            <p className="text-[20px] md:text-[24px] font-bold text-white tracking-tight">
-              {EVENT.theme}
-            </p>
+          <motion.div {...fadeUp(0.3)} className="mt-8 flex flex-col gap-3 items-center">
+            <div className="flex flex-col items-center gap-1">
+              <span className="text-[11px] uppercase tracking-[0.28em] text-white/40 font-semibold">
+                This Year&apos;s Theme
+              </span>
+              <p
+                className="text-[32px] sm:text-[42px] md:text-[52px] font-black tracking-tight uppercase leading-none text-gradient-orange"
+              >
+                {EVENT.theme}
+              </p>
+            </div>
             <p className="text-[15px] md:text-[17px] font-medium text-white/55 italic">
               {EVENT.tagline}
             </p>
