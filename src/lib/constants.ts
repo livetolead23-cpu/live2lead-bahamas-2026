@@ -71,7 +71,7 @@ export const SPEAKERS: Speaker[] = [
   {
     name:  "Myles Munroe Jr.",
     title: "Global Speaker & Leadership Voice",
-    org:   "",
+    org:   "Munroe Global",
     role:  "local",
     photo: "/images/speakers/myles-munroe-jr.jpg",
     bio:   "Carrying forward a legendary legacy, Myles Munroe Jr. is a global speaker and emerging leadership voice who speaks with authenticity, depth, and vision. He challenges the next generation of leaders to discover their purpose, embrace their identity, and step fully into their calling.",
@@ -79,7 +79,7 @@ export const SPEAKERS: Speaker[] = [
   {
     name:  "Charisa Munroe-Wilborn",
     title: "Leadership Expert, Speaker & Author",
-    org:   "",
+    org:   "Charisa Munroe, LLC",
     role:  "local",
     photo: "/images/speakers/charisa-munroe-wilborn.jpg",
     bio:   "Charisa Munroe-Wilborn is a compelling voice in the leadership space — an expert, speaker, and author dedicated to equipping leaders with the tools they need to make a lasting impact. Her work inspires audiences to lead authentically and build legacies that endure.",
@@ -122,7 +122,7 @@ export const SPEAKERS: Speaker[] = [
   {
     name:  "Randy Fox, CSP",
     title: "Keynote Speaker, Leadership Coach & Author",
-    org:   "",
+    org:   "FoxPoint",
     role:  "international",
     photo: "/images/speakers/randy-fox.jpg",
     bio:   "Randy Fox, CSP (Certified Speaking Professional), is an award-winning keynote speaker, leadership coach, and author known for his high-energy, story-driven presentations. With a rare ability to blend humor, insight, and practical application, Randy has inspired audiences across the globe to lead with greater courage, clarity, and impact.",
