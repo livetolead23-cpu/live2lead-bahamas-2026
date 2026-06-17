@@ -16,6 +16,7 @@ const TICKETS = [
     price:       "BSD $225",
     per:         "per person",
     icon:        User,
+    url:         EVENT.registerUrl,
     description: "Your personal seat at the Caribbean's premier leadership conference.",
     perks: [
       "Full-day conference access",
@@ -33,6 +34,7 @@ const TICKETS = [
     price:       "BSD $199",
     per:         "per person · min 10",
     icon:        Users,
+    url:         EVENT.groupRegisterUrl,
     description: "Bring your team and invest in your organization's leadership legacy.",
     perks: [
       "Full-day conference access",
@@ -131,7 +133,7 @@ function TicketCard({
       {/* CTA */}
       <div className="px-6 pb-6 pt-2">
         <a
-          href={EVENT.registerUrl}
+          href={ticket.url}
           target="_blank"
           rel="noopener noreferrer"
           className="
