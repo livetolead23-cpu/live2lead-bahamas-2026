@@ -1,10 +1,11 @@
 "use client";
 
-import { motion, useInView } from "framer-motion";
-import { useRef } from "react";
+import { motion } from "framer-motion";
 import Image from "next/image";
 import { ArrowRight, Calendar, MapPin, Check, Users, User } from "lucide-react";
 import { EVENT } from "@/lib/constants";
+import { useScrollAnimation } from "@/hooks/useScrollAnimation";
+import { fadeUp, fadeIn } from "@/lib/animations";
 
 // ─── Ticket data ──────────────────────────────────────────────────────
 const TICKETS = [
@@ -52,8 +53,7 @@ function TicketCard({
   ticket: (typeof TICKETS)[number];
   delay: number;
 }) {
-  const ref    = useRef<HTMLDivElement>(null);
-  const inView = useInView(ref, { once: true, margin: "-60px" });
+  const { ref, inView } = useScrollAnimation("-60px");
   const Icon   = ticket.icon;
 
   return (
@@ -165,8 +165,7 @@ function TicketCard({
 
 // ─── Main Section ─────────────────────────────────────────────────────
 export default function RegisterCTA() {
-  const ref    = useRef<HTMLDivElement>(null);
-  const inView = useInView(ref, { once: true, margin: "-80px" });
+  const { ref, inView } = useScrollAnimation("-80px");
 
   return (
     <section id="register" className="section-py relative overflow-hidden">

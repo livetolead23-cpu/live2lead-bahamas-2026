@@ -1,7 +1,8 @@
 "use client";
 
-import { motion, useInView } from "framer-motion";
-import { useRef } from "react";
+import { motion } from "framer-motion";
+import { useScrollAnimation } from "@/hooks/useScrollAnimation";
+import { fadeUp } from "@/lib/animations";
 
 // ─── Placeholder sponsor tiers — replace logos with actual Image components ──
 const TIERS = [
@@ -50,8 +51,7 @@ function SponsorPlaceholder({ name, size = "md" }: { name: string; size?: "lg" |
 }
 
 export default function Sponsors() {
-  const ref    = useRef<HTMLDivElement>(null);
-  const inView = useInView(ref, { once: true, margin: "-80px" });
+  const { ref, inView } = useScrollAnimation("-80px");
 
   return (
     <section id="sponsors" className="bg-navy-mid section-py">

@@ -1,9 +1,10 @@
 "use client";
 
 import Image from "next/image";
-import { motion, useInView } from "framer-motion";
-import { useRef } from "react";
+import { motion } from "framer-motion";
 import { SPEAKERS, type Speaker } from "@/lib/constants";
+import { useScrollAnimation } from "@/hooks/useScrollAnimation";
+import { fadeUp } from "@/lib/animations";
 
 // ─── Speaker Card ─────────────────────────────────────────────────────
 function SpeakerCard({
@@ -15,8 +16,7 @@ function SpeakerCard({
   delay: number;
   featured?: boolean;
 }) {
-  const ref    = useRef<HTMLDivElement>(null);
-  const inView = useInView(ref, { once: true, margin: "-60px" });
+  const { ref, inView } = useScrollAnimation("-60px");
 
   const roleLabel =
     speaker.role === "host"          ? "Live2Lead Host"       :
@@ -134,8 +134,7 @@ function SpeakerCard({
 
 // ─── Main Section ─────────────────────────────────────────────────────
 export default function Speakers() {
-  const headerRef    = useRef<HTMLDivElement>(null);
-  const headerInView = useInView(headerRef, { once: true, margin: "-80px" });
+  const { ref: headerRef, inView: headerInView } = useScrollAnimation("-80px");
 
   const host          = SPEAKERS.filter((s) => s.role === "host");
   const moderators    = SPEAKERS.filter((s) => s.role === "moderator");
@@ -149,9 +148,8 @@ export default function Speakers() {
         {/* ── Header ──────────────────────────────────────────────── */}
         <motion.div
           ref={headerRef}
-          initial={{ opacity: 0, y: 24 }}
-          animate={headerInView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.6 }}
+          {...fadeUp()}
+          animate={headerInView ? fadeUp().animate : {}}
           className="text-center mb-16 flex flex-col gap-4 items-center"
         >
           <span className="eyebrow">Meet the Voices</span>

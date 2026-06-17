@@ -1,15 +1,15 @@
 "use client";
 
 import { useState } from "react";
-import { motion, useInView, AnimatePresence } from "framer-motion";
-import { useRef } from "react";
+import { motion, AnimatePresence } from "framer-motion";
 import { ChevronLeft, ChevronRight, Quote } from "lucide-react";
 import { TESTIMONIALS } from "@/lib/constants";
+import { useScrollAnimation } from "@/hooks/useScrollAnimation";
+import { fadeUp } from "@/lib/animations";
 
 export default function Testimonials() {
   const [active, setActive] = useState(0);
-  const ref    = useRef<HTMLDivElement>(null);
-  const inView = useInView(ref, { once: true, margin: "-80px" });
+  const { ref, inView } = useScrollAnimation("-80px");
 
   const prev = () => setActive((a) => (a === 0 ? TESTIMONIALS.length - 1 : a - 1));
   const next = () => setActive((a) => (a === TESTIMONIALS.length - 1 ? 0 : a + 1));

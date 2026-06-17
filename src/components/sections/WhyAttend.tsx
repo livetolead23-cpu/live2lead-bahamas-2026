@@ -1,8 +1,9 @@
 "use client";
 
-import { motion, useInView } from "framer-motion";
-import { useRef } from "react";
+import { motion } from "framer-motion";
 import { EVENT } from "@/lib/constants";
+import { useScrollAnimation } from "@/hooks/useScrollAnimation";
+import { fadeLeft, fadeRight, fadeUp, scaleIn } from "@/lib/animations";
 
 const REASONS = [
   {
@@ -48,8 +49,7 @@ const REASONS = [
 ];
 
 function ReasonCard({ num, title, body, delay }: { num: string; title: string; body: string; delay: number }) {
-  const ref    = useRef<HTMLDivElement>(null);
-  const inView = useInView(ref, { once: true, margin: "-40px" });
+  const { ref, inView } = useScrollAnimation("-40px");
 
   return (
     <motion.div
@@ -78,11 +78,8 @@ function ReasonCard({ num, title, body, delay }: { num: string; title: string; b
 }
 
 export default function WhyAttend() {
-  const introRef    = useRef<HTMLDivElement>(null);
-  const introInView = useInView(introRef, { once: true, margin: "-60px" });
-
-  const reasonsRef    = useRef<HTMLDivElement>(null);
-  const reasonsInView = useInView(reasonsRef, { once: true, margin: "-60px" });
+  const { ref: introRef,   inView: introInView   } = useScrollAnimation("-60px");
+  const { ref: reasonsRef, inView: reasonsInView } = useScrollAnimation("-60px");
 
   return (
     <section id="why-attend-section" className="overflow-hidden bg-navy">

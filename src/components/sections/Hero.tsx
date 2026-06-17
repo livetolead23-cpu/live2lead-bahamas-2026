@@ -4,18 +4,8 @@ import { motion } from "framer-motion";
 import { ArrowRight, ChevronDown } from "lucide-react";
 import CountdownTimer from "./CountdownTimer";
 import { EVENT } from "@/lib/constants";
-
-const fadeUp = (delay = 0) => ({
-  initial:    { opacity: 0, y: 28 },
-  animate:    { opacity: 1, y: 0 },
-  transition: { duration: 0.65, delay, ease: [0.22, 1, 0.36, 1] as const },
-});
-
-const fadeIn = (delay = 0) => ({
-  initial:    { opacity: 0 },
-  animate:    { opacity: 1 },
-  transition: { duration: 0.8, delay },
-});
+import { fadeUp, fadeIn } from "@/lib/animations";
+import Button from "@/components/ui/Button";
 
 export default function Hero() {
   return (
@@ -103,24 +93,9 @@ export default function Hero() {
             {...fadeUp(0.4)}
             className="mt-10 flex flex-wrap items-center justify-center gap-4"
           >
-            <a
-              href={EVENT.registerUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="
-                inline-flex items-center gap-2
-                px-9 py-4 rounded-full
-                text-[14px] font-semibold uppercase tracking-[0.07em]
-                bg-orange text-white
-                hover:bg-orange-light transition-all duration-200
-                shadow-[0_0_36px_rgba(244,123,32,0.50)]
-                hover:shadow-[0_0_48px_rgba(244,123,32,0.70)]
-                hover:scale-[1.02] active:scale-[0.98]
-              "
-            >
-              Register Now
-              <ArrowRight size={16} />
-            </a>
+            <Button href={EVENT.registerUrl} size="lg">
+              Register Now <ArrowRight size={16} />
+            </Button>
             <button
               onClick={() =>
                 document.getElementById("about")?.scrollIntoView({ behavior: "smooth" })

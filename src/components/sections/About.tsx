@@ -1,10 +1,10 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { useInView } from "framer-motion";
-import { useRef } from "react";
 import Image from "next/image";
 import { EVENT } from "@/lib/constants";
+import { useScrollAnimation } from "@/hooks/useScrollAnimation";
+import { fadeLeft, fadeRight } from "@/lib/animations";
 
 const stats = [
   { number: "11+",  label: "Speakers" },
@@ -14,8 +14,7 @@ const stats = [
 ];
 
 export default function About() {
-  const ref    = useRef<HTMLDivElement>(null);
-  const inView = useInView(ref, { once: true, margin: "-100px" });
+  const { ref, inView } = useScrollAnimation("-100px");
 
   return (
     <section id="about" className="bg-surface-gray section-py">
@@ -51,9 +50,8 @@ export default function About() {
 
           {/* Left: text */}
           <motion.div
-            initial={{ opacity: 0, x: -24 }}
-            animate={inView ? { opacity: 1, x: 0 } : {}}
-            transition={{ duration: 0.65, delay: 0.2 }}
+            {...fadeLeft(0.2)}
+            animate={inView ? fadeLeft(0.2).animate : {}}
             className="flex flex-col gap-6"
           >
             <div>
@@ -93,9 +91,8 @@ export default function About() {
 
           {/* Right: split card — photo top, theme text bottom */}
           <motion.div
-            initial={{ opacity: 0, x: 24 }}
-            animate={inView ? { opacity: 1, x: 0 } : {}}
-            transition={{ duration: 0.65, delay: 0.35 }}
+            {...fadeRight(0.35)}
+            animate={inView ? fadeRight(0.35).animate : {}}
           >
             <div className="rounded-3xl overflow-hidden flex flex-col shadow-[0_8px_48px_rgba(10,22,40,0.18)]">
 

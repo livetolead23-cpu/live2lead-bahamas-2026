@@ -1,8 +1,9 @@
 "use client";
 
-import { motion, useInView } from "framer-motion";
-import { useRef } from "react";
+import { motion } from "framer-motion";
 import { EVENT } from "@/lib/constants";
+import { useScrollAnimation } from "@/hooks/useScrollAnimation";
+import { fadeLeft, fadeRight } from "@/lib/animations";
 
 const SOCIALS = [
   {
@@ -39,8 +40,7 @@ const SOCIALS = [
 ];
 
 export default function ContactSection() {
-  const ref    = useRef<HTMLDivElement>(null);
-  const inView = useInView(ref, { once: true, margin: "-60px" });
+  const { ref, inView } = useScrollAnimation("-60px");
 
   return (
     <section
@@ -64,9 +64,8 @@ export default function ContactSection() {
 
           {/* Left — Text */}
           <motion.div
-            initial={{ opacity: 0, x: -30 }}
-            animate={inView ? { opacity: 1, x: 0 } : {}}
-            transition={{ duration: 0.65 }}
+            {...fadeLeft()}
+            animate={inView ? fadeLeft().animate : {}}
             className="flex flex-col gap-6"
           >
             <span className="eyebrow">Get In Touch</span>
@@ -113,9 +112,8 @@ export default function ContactSection() {
 
           {/* Right — Social + info */}
           <motion.div
-            initial={{ opacity: 0, x: 30 }}
-            animate={inView ? { opacity: 1, x: 0 } : {}}
-            transition={{ duration: 0.65, delay: 0.15 }}
+            {...fadeRight(0.15)}
+            animate={inView ? fadeRight(0.15).animate : {}}
             className="flex flex-col gap-8"
           >
             {/* Social links */}
