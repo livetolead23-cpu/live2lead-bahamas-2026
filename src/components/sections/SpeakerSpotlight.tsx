@@ -1,16 +1,16 @@
 "use client";
 
-import { motion, useInView } from "framer-motion";
-import { useRef } from "react";
+import { motion } from "framer-motion";
 import { EVENT } from "@/lib/constants";
+import { fadeLeft, scaleIn } from "@/lib/animations";
+import { useScrollAnimation } from "@/hooks/useScrollAnimation";
+import Button from "@/components/ui/Button";
 
 export default function SpeakerSpotlight() {
-  const ref    = useRef<HTMLDivElement>(null);
-  const inView = useInView(ref, { once: true, margin: "-60px" });
+  const { ref, inView } = useScrollAnimation();
 
   return (
     <section className="bg-navy overflow-hidden">
-      {/* Top divider */}
       <div className="container-site">
         <div className="border-t border-white/8" />
       </div>
@@ -20,9 +20,8 @@ export default function SpeakerSpotlight() {
 
           {/* Left — Text */}
           <motion.div
-            initial={{ opacity: 0, x: -30 }}
-            animate={inView ? { opacity: 1, x: 0 } : {}}
-            transition={{ duration: 0.65 }}
+            {...fadeLeft()}
+            animate={inView ? fadeLeft().animate : {}}
             className="flex flex-col gap-6"
           >
             <span className="eyebrow">Featured Speaker</span>
@@ -44,36 +43,18 @@ export default function SpeakerSpotlight() {
               His message will challenge you to lead with greater courage, clarity, and impact.
             </p>
 
-            <a
-              href={EVENT.registerUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="
-                self-start mt-2
-                px-8 py-3.5 rounded-full
-                text-[13px] font-semibold uppercase tracking-[0.07em]
-                bg-orange text-white
-                hover:bg-orange-light transition-all duration-200
-                shadow-[0_0_28px_rgba(244,123,32,0.4)]
-                hover:shadow-[0_0_40px_rgba(244,123,32,0.6)]
-                hover:scale-[1.02] active:scale-[0.98]
-              "
-            >
+            <Button href={EVENT.registerUrl} className="self-start mt-2">
               Secure Your Seat →
-            </a>
+            </Button>
           </motion.div>
 
           {/* Right — YouTube embed */}
           <motion.div
-            initial={{ opacity: 0, scale: 0.96 }}
-            animate={inView ? { opacity: 1, scale: 1 } : {}}
-            transition={{ duration: 0.7, delay: 0.2 }}
+            {...scaleIn(0.2)}
+            animate={inView ? scaleIn(0.2).animate : {}}
             className="relative rounded-2xl overflow-hidden shadow-[0_16px_64px_rgba(0,0,0,0.55)]"
-            style={{
-              border: "1px solid rgba(244,123,32,0.2)",
-            }}
+            style={{ border: "1px solid rgba(244,123,32,0.2)" }}
           >
-            {/* 16:9 aspect ratio wrapper */}
             <div className="relative w-full" style={{ paddingBottom: "56.25%" }}>
               <iframe
                 src="https://www.youtube.com/embed/bGLh_ae69Dg?rel=0&modestbranding=1&color=white"
@@ -85,16 +66,12 @@ export default function SpeakerSpotlight() {
               />
             </div>
 
-            {/* Bottom label bar */}
             <div
               className="px-5 py-3 flex items-center justify-between"
               style={{ background: "rgba(10,22,40,0.95)", borderTop: "1px solid rgba(255,255,255,0.06)" }}
             >
               <div className="flex items-center gap-3">
-                <div
-                  className="w-2 h-2 rounded-full"
-                  style={{ background: "#F47B20" }}
-                />
+                <div className="w-2 h-2 rounded-full" style={{ background: "#F47B20" }} />
                 <span className="text-[12px] font-semibold text-white/60 uppercase tracking-[0.12em]">
                   Randy Fox, CSP · FoxPoint
                 </span>
