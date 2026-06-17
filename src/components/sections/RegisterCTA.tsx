@@ -133,7 +133,7 @@ function TicketCard({
       {/* Group disclaimer */}
       {ticket.id === "group" && (
         <div className="px-6 pb-4">
-          <p className="text-[12px] text-orange/80 leading-[1.65]">
+          <p className="text-[14px] text-orange/80 leading-[1.65]">
             <strong className="font-bold text-orange">Important:</strong> The group rate of BSD $199 per person is only valid when purchasing a minimum of 10 tickets in a single transaction.
           </p>
         </div>
