@@ -62,39 +62,80 @@ export default function Hero() {
             <span className="h-px w-6 bg-orange" />
           </motion.div>
 
-          {/* Main headline */}
-          <motion.h1
-            {...fadeUp(0.2)}
-            className="
-              text-[38px] sm:text-[58px] lg:text-[88px] xl:text-[100px]
-              font-black leading-[1.0] tracking-tight
-              max-w-[900px]
-            "
-          >
-            <span style={{ color: "#4FC8E8" }}>Live</span>
-            <span style={{ color: "#E8392A" }}>2</span>
-            <span style={{ color: "#4FC8E8" }}>Lead</span>
+          {/* Main headline — each part animates independently */}
+          <h1 className="
+            text-[38px] sm:text-[58px] lg:text-[88px] xl:text-[100px]
+            font-black leading-[1.0] tracking-tight
+            max-w-[900px]
+          ">
+            <motion.span
+              initial={{ opacity: 0, y: 32, filter: "blur(8px)" }}
+              animate={{ opacity: 1, y: 0,  filter: "blur(0px)" }}
+              transition={{ duration: 0.7, delay: 0.15, ease: [0.22, 1, 0.36, 1] }}
+              style={{ color: "#4FC8E8", display: "inline-block" }}
+            >Live</motion.span>
+            <motion.span
+              initial={{ opacity: 0, scale: 0.4 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.5, delay: 0.32, ease: [0.22, 1, 0.36, 1] }}
+              style={{ color: "#E8392A", display: "inline-block" }}
+            >2</motion.span>
+            <motion.span
+              initial={{ opacity: 0, y: 32, filter: "blur(8px)" }}
+              animate={{ opacity: 1, y: 0,  filter: "blur(0px)" }}
+              transition={{ duration: 0.7, delay: 0.22, ease: [0.22, 1, 0.36, 1] }}
+              style={{ color: "#4FC8E8", display: "inline-block" }}
+            >Lead</motion.span>
             {" "}
-            <span className="text-gradient-orange">Bahamas 2026</span>
-          </motion.h1>
+            <motion.span
+              initial={{ opacity: 0, y: 40, filter: "blur(12px)" }}
+              animate={{ opacity: 1, y: 0,  filter: "blur(0px)" }}
+              transition={{ duration: 0.8, delay: 0.42, ease: [0.22, 1, 0.36, 1] }}
+              className="text-gradient-orange"
+              style={{ display: "block" }}
+            >Bahamas 2026</motion.span>
+          </h1>
 
           {/* Theme + tagline */}
-          <motion.div {...fadeUp(0.3)} className="mt-8 flex flex-col gap-3 items-center">
-            <div className="flex flex-col items-center gap-1.5">
-              <span className="text-[12px] uppercase tracking-[0.28em] text-white/55 font-bold">
-                This Year&apos;s Theme
-              </span>
-              <p
-                className="text-[32px] sm:text-[42px] md:text-[52px] font-black tracking-tight uppercase leading-none"
-                style={{ color: "#E8392A" }}
-              >
-                {EVENT.theme}
-              </p>
-            </div>
-            <p className="text-[17px] md:text-[20px] font-black text-white tracking-wide italic">
+          <div className="mt-8 flex flex-col gap-3 items-center">
+
+            {/* THIS YEAR'S THEME label */}
+            <motion.span
+              initial={{ opacity: 0, letterSpacing: "0.5em" }}
+              animate={{ opacity: 1, letterSpacing: "0.28em" }}
+              transition={{ duration: 0.9, delay: 0.62 }}
+              className="text-[12px] uppercase text-white/55 font-bold"
+              style={{ display: "block" }}
+            >
+              This Year&apos;s Theme
+            </motion.span>
+
+            {/* THE LEGACY CODE */}
+            <motion.p
+              initial={{ opacity: 0, y: 20, filter: "blur(6px)" }}
+              animate={{ opacity: 1, y: 0,  filter: "blur(0px)" }}
+              transition={{ duration: 0.75, delay: 0.75, ease: [0.22, 1, 0.36, 1] }}
+              className="text-[32px] sm:text-[42px] md:text-[52px] font-black tracking-tight uppercase leading-none"
+              style={{
+                color: "#E8392A",
+                textShadow: "0 0 40px rgba(232,57,42,0.45), 0 0 80px rgba(232,57,42,0.18)",
+              }}
+            >
+              {EVENT.theme}
+            </motion.p>
+
+            {/* LEADyourself. INFLUENCEothers. */}
+            <motion.p
+              initial={{ opacity: 0, y: 12, filter: "blur(4px)" }}
+              animate={{ opacity: 1, y: 0,  filter: "blur(0px)" }}
+              transition={{ duration: 0.7, delay: 0.9, ease: [0.22, 1, 0.36, 1] }}
+              className="text-[17px] md:text-[20px] font-black text-white tracking-wide italic"
+              style={{ textShadow: "0 0 24px rgba(255,255,255,0.25)" }}
+            >
               {EVENT.tagline}
-            </p>
-          </motion.div>
+            </motion.p>
+
+          </div>
 
           {/* CTAs */}
           <motion.div
