@@ -207,6 +207,3 @@ export const TESTIMONIALS = [
     company: "Live2Lead Bahamas 2025",
   },
 ];
-025",
-  },
-];
