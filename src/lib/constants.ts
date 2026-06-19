@@ -53,7 +53,15 @@ export const SPEAKERS: Speaker[] = [
     photo: "/images/speakers/ruth-bowe.jpg",
   },
 
-  // ── Local Speakers (7) — sorted by last name
+  // ── Local Speakers (8) — sorted by last name
+  {
+    name:  "Nathaniel Butler",
+    title: "CEO & Business Leader",
+    org:   "Drewber Solutions Ltd",
+    role:  "local",
+    photo: "/images/speakers/nathaniel_butler.jpg",
+    bio:   "Nathaniel Butler is a seasoned financial advisor and business leader who brings sharp strategic insight and real-world expertise to the leadership conversation. As CEO of Drewber Solutions Ltd, he is dedicated to empowering organizations and individuals to build financially sound and purposeful legacies.",
+  },
   {
     name:  "Simmone L. Bowe",
     title: "Leadership & HR Strategist",
@@ -180,20 +188,4 @@ export const TESTIMONIALS = [
     company: "Live2Lead Bahamas 2025",
   },
   {
-    quote:   "I would encourage every professional in the Bahamas to attend Live2Lead. The content is world-class and the energy in the room is contagious. You will not leave the same person you came in as.",
-    name:    "Rochelle Wells",
-    title:   "Professional",
-    company: "Commonwealth Bank",
-  },
-  {
-    quote:   "Live2Lead has made me rethink and repurpose. There is more within me.",
-    name:    "Kenyetta DeanPugh",
-    title:   "Attendee",
-    company: "Live2Lead Bahamas 2025",
-  },
-  {
-    quote:   "Today's conference has been transformative. I am encouraged and inspired to lead more passionately.",
-    name:    "Natasha M. Dean",
-    company: "Live2Lead Bahamas 2025",
-  },
-];
+    quote:   "I would encourage every professional in the Bahamas to attend Live2Lead. The content is world-class and the energy in the room is contagious. You will not leave the same person you came in as
