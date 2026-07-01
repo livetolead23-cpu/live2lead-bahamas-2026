@@ -3,7 +3,7 @@
 import { motion } from "framer-motion";
 import { ArrowRight, ChevronDown } from "lucide-react";
 import CountdownTimer from "./CountdownTimer";
-import { EVENT } from "@/lib/constants";
+import { EVENT, PRICING } from "@/lib/constants";
 import { fadeUp, fadeIn } from "@/lib/animations";
 import Button from "@/components/ui/Button";
 
@@ -140,11 +140,12 @@ export default function Hero() {
           {/* CTAs */}
           <motion.div
             {...fadeUp(0.4)}
-            className="mt-10 flex flex-wrap items-center justify-center gap-4"
+            className="mt-10 flex flex-col items-center gap-4"
           >
-            <Button href={EVENT.registerUrl} size="lg">
-              Register Now <ArrowRight size={16} />
-            </Button>
+            <div className="flex flex-wrap items-center justify-center gap-4">
+              <Button href={EVENT.registerUrl} size="lg">
+                Register Now — {PRICING.phase} <ArrowRight size={16} />
+              </Button>
             <button
               onClick={() =>
                 document.getElementById("about")?.scrollIntoView({ behavior: "smooth" })
@@ -158,6 +159,10 @@ export default function Hero() {
             >
               Learn More
             </button>
+            </div>
+            <p className="text-[12px] text-orange/70 uppercase tracking-[0.1em] font-semibold">
+              {PRICING.phase} ends {PRICING.deadline} · Save before rates increase
+            </p>
           </motion.div>
 
           {/* Countdown — full width */}
