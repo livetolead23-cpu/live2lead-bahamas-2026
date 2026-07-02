@@ -143,7 +143,7 @@ export default function Hero() {
             className="mt-10 flex flex-col items-center gap-4"
           >
             <div className="flex flex-wrap items-center justify-center gap-4">
-              <Button href={EVENT.registerUrl} size="lg">
+              <Button href="#register" external={false} size="lg">
                 Register Now — {PRICING.phase} <ArrowRight size={16} />
               </Button>
             <button
