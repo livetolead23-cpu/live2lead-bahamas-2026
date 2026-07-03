@@ -15,8 +15,8 @@ export const EVENT = {
 // ─── Pricing Tiers ───────────────────────────────────────────────────
 export const PRICING = {
   phase:       "Early Bird",
-  deadline:    "August 31, 2026",
-  deadlineISO: "2026-08-31T23:59:59",
+  deadline:    "July 31, 2026",
+  deadlineISO: "2026-07-31T23:59:59",
   individual: {
     label:       "Individual",
     price:       250,
