@@ -248,7 +248,7 @@ export default function RegisterCTA() {
             </h2>
             <p className="text-[16px] text-white/50 max-w-[520px] leading-[1.7]">
               Secure your seat at the Caribbean&apos;s most anticipated leadership conference.
-              Early Bird rates are locked in through August 31 — don&apos;t miss your window.
+              Early Bird rates are locked in through {PRICING.deadline} — don&apos;t miss your window.
             </p>
           </motion.div>
 
@@ -265,7 +265,7 @@ export default function RegisterCTA() {
           >
             <Clock size={14} className="text-orange flex-shrink-0" />
             <span className="text-[13px] font-semibold text-orange/90 uppercase tracking-[0.1em]">
-              Early Bird ends August 31, 2026 — Save before rates increase
+              Early Bird ends {PRICING.deadline} — Save before rates increase
             </span>
           </motion.div>
 
