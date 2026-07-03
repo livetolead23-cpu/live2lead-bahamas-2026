@@ -7,8 +7,8 @@ export const EVENT = {
   dateISO:      "2026-10-02T08:00:00",   // Countdown target (Bahamas EST -5)
   venue:        "Baha Mar Convention Center",
   city:         "Nassau, Bahamas",
-  registerUrl:      "https://buy.stripe.com/14A5kF6KUazd3O03SnfjG02",
-  groupRegisterUrl: "https://buy.stripe.com/5kQcN70mwbDhgAMbkPfjG03",
+  registerUrl:      "https://form.jotform.com/livetolead23/live2lead-bahamas-standard",
+  groupRegisterUrl: "https://form.jotform.com/livetolead23/groupregistration",
   hostedBy:         "Hephzibah Human Capital Solutions",
 } as const;
 
@@ -22,7 +22,7 @@ export const PRICING = {
     price:       250,
     priceDisplay: "$250",
     description: "Single registration — secure your seat today",
-    url:         "https://buy.stripe.com/14A5kF6KUazd3O03SnfjG02",
+    url:         "https://form.jotform.com/livetolead23/live2lead-bahamas-standard",
   },
   group: {
     label:       "Group",
@@ -30,7 +30,7 @@ export const PRICING = {
     priceDisplay: "$225",
     description: "10 or more — ideal for corporate teams & organizations",
     minimum:     10,
-    url:         "https://buy.stripe.com/5kQcN70mwbDhgAMbkPfjG03",
+    url:         "https://form.jotform.com/livetolead23/groupregistration",
   },
 } as const;
 
