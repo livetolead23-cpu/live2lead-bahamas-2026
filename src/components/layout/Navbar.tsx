@@ -99,10 +99,8 @@ export default function Navbar() {
           </nav>
 
           <div className="hidden lg:flex items-center gap-4">
-            <a
-              href={EVENT.registerUrl}
-              target="_blank"
-              rel="noopener noreferrer"
+            <button
+              onClick={() => handleNavClick("#register")}
               className="
                 px-6 py-2.5 rounded-full text-[13px] font-semibold uppercase tracking-[0.06em]
                 bg-orange text-white
@@ -112,7 +110,7 @@ export default function Navbar() {
               "
             >
               Register Now
-            </a>
+            </button>
           </div>
 
           <button
@@ -169,11 +167,8 @@ export default function Navbar() {
               </nav>
 
               <div className="px-6 pb-8 mt-auto">
-                <a
-                  href={EVENT.registerUrl}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  onClick={() => setMobileOpen(false)}
+                <button
+                  onClick={() => { setMobileOpen(false); handleNavClick("#register"); }}
                   className="
                     block w-full py-4 text-center rounded-full
                     text-[14px] font-semibold uppercase tracking-[0.06em]
@@ -183,7 +178,7 @@ export default function Navbar() {
                   "
                 >
                   Register Now
-                </a>
+                </button>
               </div>
             </motion.div>
           </>
