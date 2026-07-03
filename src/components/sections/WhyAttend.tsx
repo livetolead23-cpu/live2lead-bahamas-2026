@@ -154,9 +154,7 @@ export default function WhyAttend() {
               take bold action toward personal and professional excellence. One day. Permanent impact.
             </p>
             <a
-              href={EVENT.registerUrl}
-              target="_blank"
-              rel="noopener noreferrer"
+              href="#register"
               className="
                 self-start mt-2
                 px-8 py-3.5 rounded-full
@@ -237,9 +235,7 @@ export default function WhyAttend() {
             className="mt-14 text-center"
           >
             <a
-              href={EVENT.registerUrl}
-              target="_blank"
-              rel="noopener noreferrer"
+              href="#register"
               className="
                 inline-flex items-center gap-2
                 px-10 py-4 rounded-full
