@@ -122,9 +122,7 @@ export default function CountdownTimer() {
             </span>
           </div>
           <a
-            href={EVENT.registerUrl}
-            target="_blank"
-            rel="noopener noreferrer"
+            href="#register"
             className="
               mt-1 inline-flex items-center justify-center
               px-5 py-2.5 rounded-full

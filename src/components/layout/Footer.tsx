@@ -84,7 +84,7 @@ export default function Footer() {
                   {label}
                 </a>
               ))}
-              <a href={EVENT.registerUrl} target="_blank" rel="noopener noreferrer" className="text-[14px] text-orange hover:text-orange-light transition-colors duration-200">
+              <a href="#register" className="text-[14px] text-orange hover:text-orange-light transition-colors duration-200">
                 Register
               </a>
             </nav>
@@ -108,9 +108,7 @@ export default function Footer() {
               Developing transformational leaders across the Caribbean.
             </p>
             <a
-              href={EVENT.registerUrl}
-              target="_blank"
-              rel="noopener noreferrer"
+              href="#register"
               className="inline-flex w-fit px-6 py-2.5 rounded-full text-[13px] font-semibold uppercase tracking-[0.07em] bg-orange text-white hover:bg-orange-light transition-colors duration-200"
             >
               Register Now

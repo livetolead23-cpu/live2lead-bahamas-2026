@@ -101,9 +101,7 @@ export default function ContactSection() {
 
             {/* Register link */}
             <a
-              href={EVENT.registerUrl}
-              target="_blank"
-              rel="noopener noreferrer"
+              href="#register"
               className="self-start text-[14px] font-semibold text-orange hover:text-orange-light transition-colors duration-200 border-b border-orange/40 hover:border-orange-light pb-0.5"
             >
               Register for Live2Lead 2026 →
