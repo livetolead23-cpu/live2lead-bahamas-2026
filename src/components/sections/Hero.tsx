@@ -160,9 +160,19 @@ export default function Hero() {
               Learn More
             </button>
             </div>
-            <p className="text-[12px] text-orange/70 uppercase tracking-[0.1em] font-semibold">
-              {PRICING.phase} ends {PRICING.deadline} · Save before rates increase
-            </p>
+            <div
+              className="flex items-center gap-3 px-6 py-3 rounded-full"
+              style={{
+                background: "rgba(244,123,32,0.15)",
+                border: "1.5px solid rgba(244,123,32,0.55)",
+                boxShadow: "0 0 24px rgba(244,123,32,0.25)",
+              }}
+            >
+              <span className="w-2 h-2 rounded-full bg-orange animate-pulse flex-shrink-0" />
+              <p className="text-[15px] sm:text-[17px] font-bold text-orange uppercase tracking-[0.08em]">
+                {PRICING.phase} Ends {PRICING.deadline} — Register Before Rates Increase
+              </p>
+            </div>
           </motion.div>
 
           {/* Countdown — full width */}
