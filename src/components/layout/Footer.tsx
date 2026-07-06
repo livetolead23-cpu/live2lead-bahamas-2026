@@ -121,8 +121,8 @@ export default function Footer() {
               Contact Us
             </h3>
             <div className="flex flex-col gap-2.5">
-              <a href="mailto:info@hephzibahhr.com" className="text-[14px] text-white/50 hover:text-white transition-colors duration-200">
-                info@hephzibahhr.com
+              <a href="https://mail.google.com/mail/?view=cm&fs=1&to=livetolead23@gmail.com&su=Live2Lead%20Bahamas%202026%20Enquiry" target="_blank" rel="noopener noreferrer" className="text-[14px] text-white/50 hover:text-white transition-colors duration-200">
+                livetolead23@gmail.com
               </a>
               <a href="https://hephtraining.com" target="_blank" rel="noopener noreferrer" className="text-[14px] text-white/50 hover:text-white transition-colors duration-200">
                 hephtraining.com
