@@ -80,7 +80,7 @@ export default function ContactSection() {
 
             {/* Email CTA */}
             <a
-              href="mailto:livetolead23@gmail.com?subject=Live2Lead Bahamas 2026 Enquiry"
+              href="https://mail.google.com/mail/?view=cm&fs=1&to=livetolead23@gmail.com&su=Live2Lead%20Bahamas%202026%20Enquiry" target="_blank" rel="noopener noreferrer"
               className="
                 self-start mt-2
                 inline-flex items-center gap-3
