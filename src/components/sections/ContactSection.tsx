@@ -80,7 +80,7 @@ export default function ContactSection() {
 
             {/* Email CTA */}
             <a
-              href="mailto:info@hephtraining.com?subject=Live2Lead Bahamas 2026 Enquiry"
+              href="mailto:livetolead23@gmail.com?subject=Live2Lead Bahamas 2026 Enquiry"
               className="
                 self-start mt-2
                 inline-flex items-center gap-3
