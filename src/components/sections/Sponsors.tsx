@@ -4,63 +4,46 @@ import { motion } from "framer-motion";
 import Image from "next/image";
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 
-// Sponsor data — set logo to null until asset is provided
 const PRESENTING_SPONSORS = [
   { name: "Sagoma Construction Ltd.", logo: "/images/sponsors/sagoma.png" },
 ];
 
-// SponsorCard handles both real logo and name-only fallback
-function SponsorCard({
-  name,
-  logo,
-  size = "lg",
-}: {
-  name: string;
-  logo: string | null;
-  size?: "lg" | "md" | "sm";
-}) {
-  const cardH    = { lg: "h-36",  md: "h-28",  sm: "h-20" };
-  const imgH     = { lg: 80,      md: 56,      sm: 40 };
-  const textSize = { lg: "text-[18px]", md: "text-[15px]", sm: "text-[13px]" };
-
+function SponsorCard({ name, logo }: { name: string; logo: string | null }) {
   return (
     <motion.div
-      whileHover={{ scale: 1.02, y: -2 }}
-      transition={{ duration: 0.2 }}
-      className={`relative flex flex-col items-center justify-center gap-3 ${cardH[size]} w-full max-w-[420px] rounded-2xl px-10 cursor-default`}
+      whileHover={{ scale: 1.03, y: -3 }}
+      transition={{ duration: 0.22 }}
+      className="relative flex items-center justify-center rounded-2xl overflow-hidden"
       style={{
-        background: "rgba(255,255,255,0.04)",
-        border: "1px solid rgba(244,123,32,0.30)",
-        backdropFilter: "blur(16px)",
-        boxShadow: "0 0 48px rgba(244,123,32,0.10), inset 0 1px 0 rgba(244,123,32,0.10)",
+        background: "#ffffff",
+        width: "320px",
+        height: "160px",
+        padding: "24px 36px",
+        boxShadow:
+          "0 0 0 1px rgba(244,123,32,0.35), 0 8px 40px rgba(0,0,0,0.35), 0 0 60px rgba(244,123,32,0.12)",
       }}
     >
+      {/* Subtle orange glow bleed on edges */}
       <div
-        className="absolute top-0 left-0 w-16 h-16 pointer-events-none"
-        style={{ background: "radial-gradient(circle at top left, rgba(244,123,32,0.18) 0%, transparent 70%)" }}
-      />
-      <div
-        className="absolute bottom-0 right-0 w-16 h-16 pointer-events-none"
-        style={{ background: "radial-gradient(circle at bottom right, rgba(244,123,32,0.12) 0%, transparent 70%)" }}
+        className="absolute inset-0 pointer-events-none"
+        style={{
+          background:
+            "radial-gradient(ellipse 80% 60% at 50% 50%, rgba(244,123,32,0.06) 0%, transparent 100%)",
+        }}
       />
 
       {logo ? (
         <Image
           src={logo}
           alt={name}
-          width={imgH[size] * 3}
-          height={imgH[size]}
-          className="object-contain relative z-10"
-          style={{ maxHeight: imgH[size] }}
+          fill
+          className="object-contain p-6"
+          sizes="320px"
         />
       ) : (
-        <div className="flex flex-col items-center gap-2 relative z-10">
-          <div className="w-10 h-px" style={{ background: "linear-gradient(90deg, transparent, rgba(244,123,32,0.6), transparent)" }} />
-          <p className={`${textSize[size]} font-bold text-white/90 text-center tracking-wide leading-snug`}>
-            {name}
-          </p>
-          <div className="w-10 h-px" style={{ background: "linear-gradient(90deg, transparent, rgba(244,123,32,0.6), transparent)" }} />
-        </div>
+        <p className="text-[18px] font-bold text-navy tracking-wide text-center leading-snug">
+          {name}
+        </p>
       )}
     </motion.div>
   );
@@ -106,13 +89,16 @@ export default function Sponsors() {
 
           <div className="flex flex-wrap justify-center gap-6">
             {PRESENTING_SPONSORS.map(({ name, logo }) => (
-              <SponsorCard key={name} name={name} logo={logo} size="lg" />
+              <SponsorCard key={name} name={name} logo={logo} />
             ))}
           </div>
         </motion.div>
 
         {/* Divider */}
-        <div className="my-14 h-px w-full max-w-[600px] mx-auto" style={{ background: "rgba(255,255,255,0.06)" }} />
+        <div
+          className="my-14 h-px w-full max-w-[600px] mx-auto"
+          style={{ background: "rgba(255,255,255,0.06)" }}
+        />
 
         {/* Become a Sponsor CTA */}
         <motion.div
