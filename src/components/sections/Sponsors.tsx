@@ -1,52 +1,68 @@
 "use client";
 
 import { motion } from "framer-motion";
+import Image from "next/image";
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
-import { fadeUp } from "@/lib/animations";
 
-// ─── Placeholder sponsor tiers — replace logos with actual Image components ──
-const TIERS = [
-  {
-    tier:  "Presenting Sponsor",
-    color: "text-orange-light",
-    sponsors: ["Sponsor Name"],
-  },
-  {
-    tier:  "Gold Sponsors",
-    color: "text-white/60",
-    sponsors: ["Sponsor A", "Sponsor B", "Sponsor C"],
-  },
-  {
-    tier:  "Supporting Sponsors",
-    color: "text-white/40",
-    sponsors: ["Sponsor D", "Sponsor E", "Sponsor F", "Sponsor G"],
-  },
+// Sponsor data — set logo to null until asset is provided
+const PRESENTING_SPONSORS = [
+  { name: "Sagoma Construction Ltd.", logo: "/images/sponsors/sagoma.png" },
 ];
 
-// Placeholder logo card — replace content with <Image /> once logos are provided
-function SponsorPlaceholder({ name, size = "md" }: { name: string; size?: "lg" | "md" | "sm" }) {
-  const heights = { lg: "h-16", md: "h-12", sm: "h-10" };
-  const pads    = { lg: "px-10 py-6", md: "px-8 py-4", sm: "px-6 py-4" };
+// SponsorCard handles both real logo and name-only fallback
+function SponsorCard({
+  name,
+  logo,
+  size = "lg",
+}: {
+  name: string;
+  logo: string | null;
+  size?: "lg" | "md" | "sm";
+}) {
+  const cardH    = { lg: "h-36",  md: "h-28",  sm: "h-20" };
+  const imgH     = { lg: 80,      md: 56,      sm: 40 };
+  const textSize = { lg: "text-[18px]", md: "text-[15px]", sm: "text-[13px]" };
+
   return (
-    <div
-      className={`
-        glass-card rounded-xl ${pads[size]}
-        flex items-center justify-center
-        hover:border-white/25 transition-all duration-300
-        group cursor-default
-      `}
+    <motion.div
+      whileHover={{ scale: 1.02, y: -2 }}
+      transition={{ duration: 0.2 }}
+      className={`relative flex flex-col items-center justify-center gap-3 ${cardH[size]} w-full max-w-[420px] rounded-2xl px-10 cursor-default`}
+      style={{
+        background: "rgba(255,255,255,0.04)",
+        border: "1px solid rgba(244,123,32,0.30)",
+        backdropFilter: "blur(16px)",
+        boxShadow: "0 0 48px rgba(244,123,32,0.10), inset 0 1px 0 rgba(244,123,32,0.10)",
+      }}
     >
-      <span
-        className={`
-          ${heights[size]}
-          font-semibold text-white/25
-          group-hover:text-white/50 transition-colors duration-300
-          flex items-center text-[13px] uppercase tracking-[0.1em]
-        `}
-      >
-        {name}
-      </span>
-    </div>
+      <div
+        className="absolute top-0 left-0 w-16 h-16 pointer-events-none"
+        style={{ background: "radial-gradient(circle at top left, rgba(244,123,32,0.18) 0%, transparent 70%)" }}
+      />
+      <div
+        className="absolute bottom-0 right-0 w-16 h-16 pointer-events-none"
+        style={{ background: "radial-gradient(circle at bottom right, rgba(244,123,32,0.12) 0%, transparent 70%)" }}
+      />
+
+      {logo ? (
+        <Image
+          src={logo}
+          alt={name}
+          width={imgH[size] * 3}
+          height={imgH[size]}
+          className="object-contain relative z-10"
+          style={{ maxHeight: imgH[size] }}
+        />
+      ) : (
+        <div className="flex flex-col items-center gap-2 relative z-10">
+          <div className="w-10 h-px" style={{ background: "linear-gradient(90deg, transparent, rgba(244,123,32,0.6), transparent)" }} />
+          <p className={`${textSize[size]} font-bold text-white/90 text-center tracking-wide leading-snug`}>
+            {name}
+          </p>
+          <div className="w-10 h-px" style={{ background: "linear-gradient(90deg, transparent, rgba(244,123,32,0.6), transparent)" }} />
+        </div>
+      )}
+    </motion.div>
   );
 }
 
@@ -73,67 +89,52 @@ export default function Sponsors() {
           </p>
         </motion.div>
 
-        {/* Tiers */}
-        <div className="flex flex-col gap-14">
-          {TIERS.map(({ tier, color, sponsors }, ti) => (
-            <motion.div
-              key={tier}
-              initial={{ opacity: 0, y: 20 }}
-              animate={inView ? { opacity: 1, y: 0 } : {}}
-              transition={{ duration: 0.5, delay: ti * 0.12 }}
-              className="flex flex-col gap-6"
-            >
-              <div className="flex items-center gap-4">
-                <div className="h-px flex-1 bg-white/8" />
-                <span className={`text-[11px] font-semibold uppercase tracking-[0.16em] ${color}`}>
-                  {tier}
-                </span>
-                <div className="h-px flex-1 bg-white/8" />
-              </div>
+        {/* Presenting Sponsor Tier */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={inView ? { opacity: 1, y: 0 } : {}}
+          transition={{ duration: 0.55, delay: 0.1 }}
+          className="flex flex-col items-center gap-8"
+        >
+          <div className="flex items-center gap-4 w-full max-w-[500px]">
+            <div className="h-px flex-1" style={{ background: "rgba(244,123,32,0.25)" }} />
+            <span className="text-[11px] font-bold uppercase tracking-[0.18em] text-orange">
+              Presenting Sponsor
+            </span>
+            <div className="h-px flex-1" style={{ background: "rgba(244,123,32,0.25)" }} />
+          </div>
 
-              <div
-                className={[
-                  "flex flex-wrap justify-center gap-4",
-                  ti === 0 ? "max-w-[360px] mx-auto" : "",
-                ].join(" ")}
-              >
-                {sponsors.map((name) => (
-                  <SponsorPlaceholder
-                    key={name}
-                    name={name}
-                    size={ti === 0 ? "lg" : ti === 1 ? "md" : "sm"}
-                  />
-                ))}
-              </div>
-            </motion.div>
-          ))}
-        </div>
+          <div className="flex flex-wrap justify-center gap-6">
+            {PRESENTING_SPONSORS.map(({ name, logo }) => (
+              <SponsorCard key={name} name={name} logo={logo} size="lg" />
+            ))}
+          </div>
+        </motion.div>
 
-        {/* Become a sponsor CTA */}
+        {/* Divider */}
+        <div className="my-14 h-px w-full max-w-[600px] mx-auto" style={{ background: "rgba(255,255,255,0.06)" }} />
+
+        {/* Become a Sponsor CTA */}
         <motion.div
           initial={{ opacity: 0 }}
           animate={inView ? { opacity: 1 } : {}}
-          transition={{ duration: 0.6, delay: 0.45 }}
-          className="mt-16 text-center"
+          transition={{ duration: 0.6, delay: 0.3 }}
+          className="text-center"
         >
           <p className="text-[15px] text-white/40 mb-4">
             Interested in sponsoring Live2Lead Bahamas 2026?
           </p>
           <a
-            href={`mailto:info@hephzibahbahamas.com?subject=Sponsorship Inquiry — Live2Lead Bahamas 2026`}
-            className="
-              inline-flex items-center gap-2
-              text-[13px] font-semibold uppercase tracking-[0.07em]
-              text-orange hover:text-orange-light
-              border-b border-orange/40 hover:border-orange-light
-              pb-0.5 transition-colors duration-200
-            "
+            href="https://mail.google.com/mail/?view=cm&fs=1&to=livetolead23@gmail.com&su=Sponsorship%20Inquiry%20%E2%80%94%20Live2Lead%20Bahamas%202026"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-2 text-[13px] font-semibold uppercase tracking-[0.07em] text-orange hover:text-orange-light border-b border-orange/40 hover:border-orange-light pb-0.5 transition-colors duration-200"
           >
-            Get in Touch →
+            Get in Touch
           </a>
         </motion.div>
 
       </div>
     </section>
-);
+  );
 }
