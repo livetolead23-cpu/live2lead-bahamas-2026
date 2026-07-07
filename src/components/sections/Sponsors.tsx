@@ -16,32 +16,23 @@ function SponsorCard({ name, logo }: { name: string; logo: string | null }) {
       className="relative flex items-center justify-center rounded-2xl overflow-hidden"
       style={{
         background: "#ffffff",
-        width: "320px",
-        height: "160px",
-        padding: "24px 36px",
+        width: "240px",
+        height: "110px",
+        padding: "14px 20px",
         boxShadow:
           "0 0 0 1px rgba(244,123,32,0.35), 0 8px 40px rgba(0,0,0,0.35), 0 0 60px rgba(244,123,32,0.12)",
       }}
     >
-      {/* Subtle orange glow bleed on edges */}
-      <div
-        className="absolute inset-0 pointer-events-none"
-        style={{
-          background:
-            "radial-gradient(ellipse 80% 60% at 50% 50%, rgba(244,123,32,0.06) 0%, transparent 100%)",
-        }}
-      />
-
       {logo ? (
         <Image
           src={logo}
           alt={name}
-          fill
-          className="object-contain p-6"
-          sizes="320px"
+          width={200}
+          height={80}
+          className="object-contain w-full h-full"
         />
       ) : (
-        <p className="text-[18px] font-bold text-navy tracking-wide text-center leading-snug">
+        <p className="text-[16px] font-bold text-navy tracking-wide text-center leading-snug">
           {name}
         </p>
       )}
@@ -111,7 +102,7 @@ export default function Sponsors() {
             Interested in sponsoring Live2Lead Bahamas 2026?
           </p>
           <a
-            href="https://mail.google.com/mail/?view=cm&fs=1&to=livetolead23@gmail.com&su=Sponsorship%20Inquiry%20%E2%80%94%20Live2Lead%20Bahamas%202026"
+            href="https://mail.google.com/mail/?view=cm&fs=1&to=livetolead23@gmail.com&su=Sponsorship%20Inquiry%20-%20Live2Lead%20Bahamas%202026"
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center gap-2 text-[13px] font-semibold uppercase tracking-[0.07em] text-orange hover:text-orange-light border-b border-orange/40 hover:border-orange-light pb-0.5 transition-colors duration-200"
