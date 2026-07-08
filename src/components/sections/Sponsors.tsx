@@ -62,7 +62,7 @@ export default function Sponsors() {
           </p>
         </motion.div>
 
-        {/* Presenting Sponsor Tier */}
+        {/* Gold Partner Tier */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={inView ? { opacity: 1, y: 0 } : {}}
@@ -72,7 +72,7 @@ export default function Sponsors() {
           <div className="flex items-center gap-4 w-full max-w-[500px]">
             <div className="h-px flex-1" style={{ background: "rgba(244,123,32,0.25)" }} />
             <span className="text-[11px] font-bold uppercase tracking-[0.18em] text-orange">
-              Presenting Sponsor
+              Gold Partner
             </span>
             <div className="h-px flex-1" style={{ background: "rgba(244,123,32,0.25)" }} />
           </div>
