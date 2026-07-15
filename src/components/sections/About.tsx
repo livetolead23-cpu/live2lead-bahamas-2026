@@ -15,6 +15,7 @@ const stats = [
 
 export default function About() {
   const { ref, inView } = useScrollAnimation("-100px");
+  const { ref: flyerRef, inView: flyerInView } = useScrollAnimation("-60px");
 
   return (
     <section id="about" className="bg-surface-gray section-py">
@@ -91,7 +92,6 @@ export default function About() {
           >
             <div className="rounded-3xl overflow-hidden flex flex-col shadow-[0_8px_48px_rgba(10,22,40,0.18)]">
 
-              {/* Top: Patrice photo */}
               <div className="relative w-full overflow-hidden" style={{ height: "380px" }}>
                 <Image
                   src="/images/gallery/photo-15.jpg"
@@ -103,7 +103,6 @@ export default function About() {
                 />
               </div>
 
-              {/* Bottom: theme text panel */}
               <div
                 className="flex flex-col gap-5 px-8 py-7"
                 style={{ background: "linear-gradient(135deg, #0F2347 0%, #162D55 100%)" }}
@@ -134,36 +133,51 @@ export default function About() {
         </div>
 
         {/* Official Event Flyer */}
-        <motion.div
-          initial={{ opacity: 0, y: 32 }}
-          animate={inView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.6, delay: 0.4 }}
-          className="mt-20 flex flex-col items-center gap-6"
-        >
-          <div className="flex items-center gap-4 w-full max-w-[600px]">
-            <div className="h-px flex-1 bg-navy/10" />
-            <span className="text-[11px] font-bold uppercase tracking-[0.18em] text-orange">
-              Official Event Flyer
-            </span>
-            <div className="h-px flex-1 bg-navy/10" />
-          </div>
+        <div ref={flyerRef} className="mt-24 flex flex-col items-center gap-10">
 
-          <div
-            className="relative w-full max-w-[560px] rounded-3xl overflow-hidden"
+          {/* Section label */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={flyerInView ? { opacity: 1, y: 0 } : {}}
+            transition={{ duration: 0.5 }}
+            className="flex flex-col items-center gap-3"
+          >
+            <div className="flex items-center gap-5 w-full max-w-[700px]">
+              <div className="h-px flex-1" style={{ background: "linear-gradient(90deg, transparent, rgba(244,123,32,0.4))" }} />
+              <span className="text-[22px] md:text-[28px] font-black uppercase tracking-[0.12em] text-navy">
+                Official Event Flyer
+              </span>
+              <div className="h-px flex-1" style={{ background: "linear-gradient(90deg, rgba(244,123,32,0.4), transparent)" }} />
+            </div>
+            <p className="text-[14px] text-navy/45 uppercase tracking-[0.1em]">Live2Lead Bahamas 2026</p>
+          </motion.div>
+
+          {/* Flyer — cinematic fly-in with blur */}
+          <motion.div
+            initial={{ opacity: 0, y: 60, scale: 0.92, filter: "blur(16px)" }}
+            animate={flyerInView
+              ? { opacity: 1, y: 0, scale: 1, filter: "blur(0px)" }
+              : {}
+            }
+            transition={{ duration: 0.9, ease: [0.22, 1, 0.36, 1], delay: 0.15 }}
+            className="relative w-full max-w-[620px]"
             style={{
-              boxShadow: "0 16px 64px rgba(10,22,40,0.18), 0 0 0 1px rgba(10,22,40,0.06)",
+              borderRadius: "24px",
+              boxShadow: "0 24px 80px rgba(10,22,40,0.22), 0 0 0 1px rgba(10,22,40,0.07), 0 0 60px rgba(244,123,32,0.08)",
+              overflow: "hidden",
             }}
           >
             <Image
               src="/images/L2L 2026.jpeg"
               alt="Live2Lead Bahamas 2026 — Official Event Flyer"
-              width={560}
-              height={792}
+              width={620}
+              height={877}
               className="w-full h-auto object-contain"
-              sizes="(max-width: 640px) 100vw, 560px"
+              sizes="(max-width: 680px) 100vw, 620px"
             />
-          </div>
-        </motion.div>
+          </motion.div>
+
+        </div>
 
       </div>
     </section>
