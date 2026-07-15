@@ -20,7 +20,7 @@ export default function About() {
     <section id="about" className="bg-surface-gray section-py">
       <div ref={ref} className="container-site">
 
-        {/* ── Stats strip ─────────────────────────────────────────── */}
+        {/* Stats strip */}
         <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mb-20">
           {stats.map(({ number, label }, i) => (
             <motion.div
@@ -28,12 +28,7 @@ export default function About() {
               initial={{ opacity: 0, y: 24 }}
               animate={inView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.5, delay: i * 0.1 }}
-              className="
-                flex flex-col items-center text-center gap-2
-                p-8 rounded-2xl
-                bg-white border border-navy/8
-                shadow-[0_2px_16px_rgba(10,22,40,0.06)]
-              "
+              className="flex flex-col items-center text-center gap-2 p-8 rounded-2xl bg-white border border-navy/8 shadow-[0_2px_16px_rgba(10,22,40,0.06)]"
             >
               <span className="text-[48px] font-black leading-none text-gradient-orange">
                 {number}
@@ -45,7 +40,7 @@ export default function About() {
           ))}
         </div>
 
-        {/* ── Body content ────────────────────────────────────────── */}
+        {/* Body content */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
 
           {/* Left: text */}
@@ -63,13 +58,13 @@ export default function About() {
             </div>
 
             <p className="text-[16px] leading-[1.75] text-navy/65">
-              Live2Lead Bahamas 2026 is the Caribbean's most anticipated leadership event —
-              a full-day immersive experience bringing together Bahamas' most dynamic
+              Live2Lead Bahamas 2026 is the Caribbean&apos;s most anticipated leadership event —
+              a full-day immersive experience bringing together Bahamas&apos; most dynamic
               executives, entrepreneurs, and emerging leaders under one roof.
             </p>
             <p className="text-[16px] leading-[1.75] text-navy/65">
               Hosted by <strong className="text-navy font-semibold">Hephzibah Human Capital Solutions</strong>,
-              this year's conference centres on a single powerful theme:{" "}
+              this year&apos;s conference centres on a single powerful theme:{" "}
               <em className="font-semibold text-orange not-italic">THE LEGACY CODE</em> —
               what kind of leader will you be remembered as?
             </p>
@@ -89,14 +84,14 @@ export default function About() {
             </div>
           </motion.div>
 
-          {/* Right: split card — photo top, theme text bottom */}
+          {/* Right: split card */}
           <motion.div
             {...fadeRight(0.35)}
             animate={inView ? fadeRight(0.35).animate : {}}
           >
             <div className="rounded-3xl overflow-hidden flex flex-col shadow-[0_8px_48px_rgba(10,22,40,0.18)]">
 
-              {/* ── Top: Patrice graphic asset — zoomed in ─────────── */}
+              {/* Top: Patrice photo */}
               <div className="relative w-full overflow-hidden" style={{ height: "380px" }}>
                 <Image
                   src="/images/gallery/photo-15.jpg"
@@ -108,31 +103,25 @@ export default function About() {
                 />
               </div>
 
-              {/* ── Bottom: theme text panel ───────────────────────── */}
+              {/* Bottom: theme text panel */}
               <div
                 className="flex flex-col gap-5 px-8 py-7"
-                style={{
-                  background: "linear-gradient(135deg, #0F2347 0%, #162D55 100%)",
-                }}
+                style={{ background: "linear-gradient(135deg, #0F2347 0%, #162D55 100%)" }}
               >
                 <div>
-                  <span className="eyebrow text-orange block mb-3">This Year's Theme</span>
+                  <span className="eyebrow text-orange block mb-3">This Year&apos;s Theme</span>
                   <h3 className="text-[34px] md:text-[40px] font-black text-white leading-[1.05] tracking-tight">
                     {EVENT.theme}
                   </h3>
                 </div>
 
                 <p className="text-[16px] text-orange font-semibold italic leading-snug border-l-2 border-orange pl-4">
-                  "{EVENT.tagline}"
+                  &ldquo;{EVENT.tagline}&rdquo;
                 </p>
 
                 <div className="grid grid-cols-2 gap-x-6 gap-y-3">
-                  {["Lead Yourself", "Influence Others",
-                    "Build Culture",  "Leave a Legacy"].map((item) => (
-                    <div
-                      key={item}
-                      className="flex items-center gap-2.5 text-[13px] font-medium text-white/70"
-                    >
+                  {["Lead Yourself", "Influence Others", "Build Culture", "Leave a Legacy"].map((item) => (
+                    <div key={item} className="flex items-center gap-2.5 text-[13px] font-medium text-white/70">
                       <span className="w-1.5 h-1.5 rounded-full bg-orange flex-shrink-0" />
                       {item}
                     </div>
@@ -142,8 +131,40 @@ export default function About() {
 
             </div>
           </motion.div>
-
         </div>
+
+        {/* Official Event Flyer */}
+        <motion.div
+          initial={{ opacity: 0, y: 32 }}
+          animate={inView ? { opacity: 1, y: 0 } : {}}
+          transition={{ duration: 0.6, delay: 0.4 }}
+          className="mt-20 flex flex-col items-center gap-6"
+        >
+          <div className="flex items-center gap-4 w-full max-w-[600px]">
+            <div className="h-px flex-1 bg-navy/10" />
+            <span className="text-[11px] font-bold uppercase tracking-[0.18em] text-orange">
+              Official Event Flyer
+            </span>
+            <div className="h-px flex-1 bg-navy/10" />
+          </div>
+
+          <div
+            className="relative w-full max-w-[560px] rounded-3xl overflow-hidden"
+            style={{
+              boxShadow: "0 16px 64px rgba(10,22,40,0.18), 0 0 0 1px rgba(10,22,40,0.06)",
+            }}
+          >
+            <Image
+              src="/images/L2L 2026.jpeg"
+              alt="Live2Lead Bahamas 2026 — Official Event Flyer"
+              width={560}
+              height={792}
+              className="w-full h-auto object-contain"
+              sizes="(max-width: 640px) 100vw, 560px"
+            />
+          </div>
+        </motion.div>
+
       </div>
     </section>
   );
