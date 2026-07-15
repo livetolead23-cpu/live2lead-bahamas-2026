@@ -168,7 +168,7 @@ export default function About() {
             }}
           >
             <Image
-              src="/images/L2L 2026.jpeg"
+              src="/images/L2L 2026 - Final.png"
               alt="Live2Lead Bahamas 2026 — Official Event Flyer"
               width={620}
               height={877}
