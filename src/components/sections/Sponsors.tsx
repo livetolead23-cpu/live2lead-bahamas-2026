@@ -64,7 +64,7 @@ function SponsorTier({
     >
       <div className="flex items-center gap-4 w-full max-w-[500px]">
         <div className="h-px flex-1" style={{ background: "rgba(244,123,32,0.25)" }} />
-        <span className="text-[11px] font-bold uppercase tracking-[0.18em] text-orange whitespace-nowrap">
+        <span className="text-[15px] md:text-[18px] font-black uppercase tracking-[0.18em] text-orange whitespace-nowrap">
           {label}
         </span>
         <div className="h-px flex-1" style={{ background: "rgba(244,123,32,0.25)" }} />
