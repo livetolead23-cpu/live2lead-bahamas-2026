@@ -6,6 +6,7 @@ import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 
 const PRESENTING_SPONSORS = [
   { name: "Sagoma Construction Ltd.", logo: "/images/sponsors/sagoma.png" },
+  { name: "Baha Mar", logo: "/images/sponsors/bahamar.png" },
 ];
 
 function SponsorCard({ name, logo }: { name: string; logo: string | null }) {
