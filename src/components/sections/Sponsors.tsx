@@ -17,23 +17,24 @@ function SponsorCard({ name, logo }: { name: string; logo: string | null }) {
     <motion.div
       whileHover={{ scale: 1.03, y: -3 }}
       transition={{ duration: 0.22 }}
-      className="relative inline-flex items-center justify-center rounded-2xl overflow-hidden"
+      className="relative flex items-center justify-center rounded-2xl overflow-hidden"
       style={{
         background: "#ffffff",
-        padding: "12px 16px",
+        width: "280px",
+        height: "140px",
         boxShadow:
           "0 0 0 1px rgba(244,123,32,0.35), 0 8px 40px rgba(0,0,0,0.35), 0 0 60px rgba(244,123,32,0.12)",
       }}
     >
       {logo ? (
-        <Image
-          src={logo}
-          alt={name}
-          width={160}
-          height={60}
-          className="object-contain"
-          style={{ display: "block" }}
-        />
+        <div className="relative w-[220px] h-[100px]">
+          <Image
+            src={logo}
+            alt={name}
+            fill
+            className="object-contain"
+          />
+        </div>
       ) : (
         <p className="text-[16px] font-bold text-navy tracking-wide text-center leading-snug px-4 py-2">
           {name}
