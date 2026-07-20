@@ -4,8 +4,11 @@ import { motion } from "framer-motion";
 import Image from "next/image";
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 
-const PRESENTING_SPONSORS = [
+const GOLD_CORPORATE = [
   { name: "Sagoma Construction Ltd.", logo: "/images/sponsors/sagoma.png" },
+];
+
+const GOLD_HOSPITALITY = [
   { name: "Baha Mar", logo: "/images/sponsors/bahamar.png" },
 ];
 
@@ -40,6 +43,40 @@ function SponsorCard({ name, logo }: { name: string; logo: string | null }) {
   );
 }
 
+function SponsorTier({
+  label,
+  sponsors,
+  delay,
+  inView,
+}: {
+  label: string;
+  sponsors: { name: string; logo: string | null }[];
+  delay: number;
+  inView: boolean;
+}) {
+  return (
+    <motion.div
+      initial={{ opacity: 0, y: 20 }}
+      animate={inView ? { opacity: 1, y: 0 } : {}}
+      transition={{ duration: 0.55, delay }}
+      className="flex flex-col items-center gap-6"
+    >
+      <div className="flex items-center gap-4 w-full max-w-[500px]">
+        <div className="h-px flex-1" style={{ background: "rgba(244,123,32,0.25)" }} />
+        <span className="text-[11px] font-bold uppercase tracking-[0.18em] text-orange whitespace-nowrap">
+          {label}
+        </span>
+        <div className="h-px flex-1" style={{ background: "rgba(244,123,32,0.25)" }} />
+      </div>
+      <div className="flex flex-wrap justify-center gap-6">
+        {sponsors.map(({ name, logo }) => (
+          <SponsorCard key={name} name={name} logo={logo} />
+        ))}
+      </div>
+    </motion.div>
+  );
+}
+
 export default function Sponsors() {
   const { ref, inView } = useScrollAnimation("-80px");
 
@@ -63,27 +100,21 @@ export default function Sponsors() {
           </p>
         </motion.div>
 
-        {/* Gold Partner Tier */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={inView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.55, delay: 0.1 }}
-          className="flex flex-col items-center gap-8"
-        >
-          <div className="flex items-center gap-4 w-full max-w-[500px]">
-            <div className="h-px flex-1" style={{ background: "rgba(244,123,32,0.25)" }} />
-            <span className="text-[11px] font-bold uppercase tracking-[0.18em] text-orange">
-              Gold Partner
-            </span>
-            <div className="h-px flex-1" style={{ background: "rgba(244,123,32,0.25)" }} />
-          </div>
-
-          <div className="flex flex-wrap justify-center gap-6">
-            {PRESENTING_SPONSORS.map(({ name, logo }) => (
-              <SponsorCard key={name} name={name} logo={logo} />
-            ))}
-          </div>
-        </motion.div>
+        {/* Sponsor Tiers */}
+        <div className="flex flex-col gap-12">
+          <SponsorTier
+            label="Gold Corporate Partner"
+            sponsors={GOLD_CORPORATE}
+            delay={0.1}
+            inView={inView}
+          />
+          <SponsorTier
+            label="Gold Hospitality Partner"
+            sponsors={GOLD_HOSPITALITY}
+            delay={0.22}
+            inView={inView}
+          />
+        </div>
 
         {/* Divider */}
         <div
@@ -95,7 +126,7 @@ export default function Sponsors() {
         <motion.div
           initial={{ opacity: 0 }}
           animate={inView ? { opacity: 1 } : {}}
-          transition={{ duration: 0.6, delay: 0.3 }}
+          transition={{ duration: 0.6, delay: 0.35 }}
           className="text-center"
         >
           <p className="text-[15px] text-white/40 mb-4">
