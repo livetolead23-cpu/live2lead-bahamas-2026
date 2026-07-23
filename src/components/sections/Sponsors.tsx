@@ -27,7 +27,7 @@ function SponsorCard({ name, logo }: { name: string; logo: string | null }) {
         width: "280px",
         height: "140px",
         boxShadow:
-          "0 0 0 1px rgba(244,123,32,0.35), 0 8px 40px rgba(0,0,0,0.35), 0 0 60px rgba(244,123,32,0.12)",
+          "0 0 0 1px rgba(212,175,55,0.35), 0 8px 40px rgba(0,0,0,0.35), 0 0 60px rgba(212,175,55,0.10)",
       }}
     >
       {logo ? (
@@ -43,21 +43,27 @@ function SponsorCard({ name, logo }: { name: string; logo: string | null }) {
   );
 }
 
+type TierVariant = "gold" | "bronze";
+
+const TIER_COLORS: Record<TierVariant, { label: string; line: string }> = {
+  gold:   { label: "#D4AF37", line: "rgba(212,175,55,0.40)" },
+  bronze: { label: "#CD7F32", line: "rgba(205,127,50,0.40)" },
+};
+
 function SponsorTier({
   label,
   sponsors,
   delay,
   inView,
-  bronze = false,
+  variant = "gold",
 }: {
   label: string;
   sponsors: { name: string; logo: string | null }[];
   delay: number;
   inView: boolean;
-  bronze?: boolean;
+  variant?: TierVariant;
 }) {
-  const accentColor = bronze ? "rgba(176,141,87,0.35)" : "rgba(244,123,32,0.25)";
-  const labelColor = bronze ? "#B08D57" : "#F47B20";
+  const colors = TIER_COLORS[variant];
 
   return (
     <motion.div
@@ -67,14 +73,14 @@ function SponsorTier({
       className="flex flex-col items-center gap-6"
     >
       <div className="flex items-center gap-4 w-full max-w-[500px]">
-        <div className="h-px flex-1" style={{ background: accentColor }} />
+        <div className="h-px flex-1" style={{ background: colors.line }} />
         <span
           className="text-[15px] md:text-[18px] font-black uppercase tracking-[0.18em] whitespace-nowrap"
-          style={{ color: labelColor }}
+          style={{ color: colors.label }}
         >
           {label}
         </span>
-        <div className="h-px flex-1" style={{ background: accentColor }} />
+        <div className="h-px flex-1" style={{ background: colors.line }} />
       </div>
       <div className="flex flex-wrap justify-center gap-6">
         {sponsors.map(({ name, logo }) => (
@@ -115,19 +121,21 @@ export default function Sponsors() {
             sponsors={GOLD_CORPORATE}
             delay={0.1}
             inView={inView}
+            variant="gold"
           />
           <SponsorTier
             label="Gold Hospitality Partner"
             sponsors={GOLD_HOSPITALITY}
             delay={0.22}
             inView={inView}
+            variant="gold"
           />
           <SponsorTier
             label="Bronze Corporate Partner"
             sponsors={BRONZE_CORPORATE}
             delay={0.34}
             inView={inView}
-            bronze
+            variant="bronze"
           />
         </div>
 
