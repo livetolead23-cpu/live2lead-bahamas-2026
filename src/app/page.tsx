@@ -8,6 +8,7 @@ import PhotoCarousel   from "@/components/sections/PhotoCarousel";
 import WhyAttend       from "@/components/sections/WhyAttend";
 import Testimonials    from "@/components/sections/Testimonials";
 import Sponsors        from "@/components/sections/Sponsors";
+import Exhibitors      from "@/components/sections/Exhibitors";
 import RegisterCTA     from "@/components/sections/RegisterCTA";
 import ContactSection  from "@/components/sections/ContactSection";
 
@@ -24,6 +25,7 @@ export default function Home() {
         <WhyAttend />
         <Testimonials />
         <Sponsors />
+        <Exhibitors />
         <RegisterCTA />
         <ContactSection />
       </main>
