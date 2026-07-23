@@ -12,6 +12,10 @@ const GOLD_HOSPITALITY = [
   { name: "Baha Mar", logo: "/images/sponsors/bahamar.png" },
 ];
 
+const BRONZE_CORPORATE = [
+  { name: "Lowe's Wholesale", logo: "/images/sponsors/lowes.png" },
+];
+
 function SponsorCard({ name, logo }: { name: string; logo: string | null }) {
   return (
     <motion.div
@@ -28,12 +32,7 @@ function SponsorCard({ name, logo }: { name: string; logo: string | null }) {
     >
       {logo ? (
         <div className="relative w-[220px] h-[100px]">
-          <Image
-            src={logo}
-            alt={name}
-            fill
-            className="object-contain"
-          />
+          <Image src={logo} alt={name} fill className="object-contain" />
         </div>
       ) : (
         <p className="text-[16px] font-bold text-navy tracking-wide text-center leading-snug px-4 py-2">
@@ -49,12 +48,17 @@ function SponsorTier({
   sponsors,
   delay,
   inView,
+  bronze = false,
 }: {
   label: string;
   sponsors: { name: string; logo: string | null }[];
   delay: number;
   inView: boolean;
+  bronze?: boolean;
 }) {
+  const accentColor = bronze ? "rgba(176,141,87,0.35)" : "rgba(244,123,32,0.25)";
+  const labelColor = bronze ? "#B08D57" : "#F47B20";
+
   return (
     <motion.div
       initial={{ opacity: 0, y: 20 }}
@@ -63,11 +67,14 @@ function SponsorTier({
       className="flex flex-col items-center gap-6"
     >
       <div className="flex items-center gap-4 w-full max-w-[500px]">
-        <div className="h-px flex-1" style={{ background: "rgba(244,123,32,0.25)" }} />
-        <span className="text-[15px] md:text-[18px] font-black uppercase tracking-[0.18em] text-orange whitespace-nowrap">
+        <div className="h-px flex-1" style={{ background: accentColor }} />
+        <span
+          className="text-[15px] md:text-[18px] font-black uppercase tracking-[0.18em] whitespace-nowrap"
+          style={{ color: labelColor }}
+        >
           {label}
         </span>
-        <div className="h-px flex-1" style={{ background: "rgba(244,123,32,0.25)" }} />
+        <div className="h-px flex-1" style={{ background: accentColor }} />
       </div>
       <div className="flex flex-wrap justify-center gap-6">
         {sponsors.map(({ name, logo }) => (
@@ -115,6 +122,13 @@ export default function Sponsors() {
             delay={0.22}
             inView={inView}
           />
+          <SponsorTier
+            label="Bronze Corporate Partner"
+            sponsors={BRONZE_CORPORATE}
+            delay={0.34}
+            inView={inView}
+            bronze
+          />
         </div>
 
         {/* Divider */}
@@ -127,7 +141,7 @@ export default function Sponsors() {
         <motion.div
           initial={{ opacity: 0 }}
           animate={inView ? { opacity: 1 } : {}}
-          transition={{ duration: 0.6, delay: 0.35 }}
+          transition={{ duration: 0.6, delay: 0.45 }}
           className="text-center"
         >
           <p className="text-[15px] text-white/40 mb-4">
