@@ -5,10 +5,10 @@ import Image from "next/image";
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 
 const EXHIBITORS = [
-  { name: "BTC",            logo: "/images/exhibitors/btc.png" },
+  { name: "BTC",             logo: "/images/exhibitors/btc.png" },
   { name: "Keller Williams", logo: "/images/exhibitors/kellerwilliams.png" },
-  { name: "ScotiaBank",     logo: "/images/exhibitors/scotiabank.png" },
-  { name: "Colina",         logo: "/images/exhibitors/colina.png" },
+  { name: "ScotiaBank",      logo: "/images/exhibitors/scotiabank.png" },
+  { name: "Colina",          logo: "/images/exhibitors/colina.png" },
 ];
 
 export default function Exhibitors() {
@@ -61,6 +61,32 @@ export default function Exhibitors() {
               </div>
             </motion.div>
           ))}
+        </motion.div>
+
+        {/* Divider */}
+        <div
+          className="my-14 h-px w-full max-w-[600px] mx-auto"
+          style={{ background: "rgba(255,255,255,0.06)" }}
+        />
+
+        {/* Exhibitor CTA */}
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={inView ? { opacity: 1 } : {}}
+          transition={{ duration: 0.6, delay: 0.45 }}
+          className="text-center"
+        >
+          <p className="text-[15px] text-white/40 mb-4">
+            Interested in exhibiting at Live2Lead Bahamas 2026?
+          </p>
+          <a
+            href="https://mail.google.com/mail/?view=cm&fs=1&to=livetolead23@gmail.com&su=Exhibitor%20Inquiry%20-%20Live2Lead%20Bahamas%202026"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-2 text-[13px] font-semibold uppercase tracking-[0.07em] text-orange hover:text-orange-light border-b border-orange/40 hover:border-orange-light pb-0.5 transition-colors duration-200"
+          >
+            Get in Touch
+          </a>
         </motion.div>
 
       </div>
