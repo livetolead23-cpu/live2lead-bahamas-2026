@@ -5,11 +5,13 @@ import Image from "next/image";
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 
 const EXHIBITORS = [
-  { name: "BTC",             logo: "/images/exhibitors/btc.png",            w: 160, h: 72 },
-  { name: "Keller Williams", logo: "/images/exhibitors/kellerwilliams.png", w: 160, h: 72 },
-  { name: "ScotiaBank",      logo: "/images/exhibitors/scotiabank.png",      w: 160, h: 72 },
-  { name: "Colina",          logo: "/images/exhibitors/colina.png",          w: 160, h: 72 },
-  { name: "Bold Pineapple",  logo: "/images/exhibitors/boldpineapple.png",   w: 188, h: 92 },
+  { name: "BTC",                logo: "/images/exhibitors/btc.png",               w: 160, h: 72 },
+  { name: "Keller Williams",    logo: "/images/exhibitors/kellerwilliams.png",    w: 160, h: 72 },
+  { name: "ScotiaBank",         logo: "/images/exhibitors/scotiabank.png",         w: 160, h: 72 },
+  { name: "Colina",             logo: "/images/exhibitors/colina.png",             w: 160, h: 72 },
+  { name: "Bold Pineapple",     logo: "/images/exhibitors/boldpineapple.png",      w: 188, h: 92 },
+  { name: "Registrar General",  logo: "/images/exhibitors/registrargeneral.png",   w: 160, h: 72 },
+  { name: "SBDC Bahamas",       logo: "/images/exhibitors/SBDC.png",               w: 160, h: 72 },
 ];
 
 export default function Exhibitors() {
