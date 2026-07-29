@@ -9,6 +9,7 @@ const EXHIBITORS = [
   { name: "Keller Williams", logo: "/images/exhibitors/kellerwilliams.png" },
   { name: "ScotiaBank",      logo: "/images/exhibitors/scotiabank.png" },
   { name: "Colina",          logo: "/images/exhibitors/colina.png" },
+  { name: "Bold Pineapple",  logo: "/images/exhibitors/boldpineapple.png" },
 ];
 
 export default function Exhibitors() {
