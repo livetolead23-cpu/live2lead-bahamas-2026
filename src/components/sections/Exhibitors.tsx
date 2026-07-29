@@ -5,11 +5,11 @@ import Image from "next/image";
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 
 const EXHIBITORS = [
-  { name: "BTC",             logo: "/images/exhibitors/btc.png" },
-  { name: "Keller Williams", logo: "/images/exhibitors/kellerwilliams.png" },
-  { name: "ScotiaBank",      logo: "/images/exhibitors/scotiabank.png" },
-  { name: "Colina",          logo: "/images/exhibitors/colina.png" },
-  { name: "Bold Pineapple",  logo: "/images/exhibitors/boldpineapple.png" },
+  { name: "BTC",             logo: "/images/exhibitors/btc.png",            w: 160, h: 72 },
+  { name: "Keller Williams", logo: "/images/exhibitors/kellerwilliams.png", w: 160, h: 72 },
+  { name: "ScotiaBank",      logo: "/images/exhibitors/scotiabank.png",      w: 160, h: 72 },
+  { name: "Colina",          logo: "/images/exhibitors/colina.png",          w: 160, h: 72 },
+  { name: "Bold Pineapple",  logo: "/images/exhibitors/boldpineapple.png",   w: 188, h: 92 },
 ];
 
 export default function Exhibitors() {
@@ -42,7 +42,7 @@ export default function Exhibitors() {
           transition={{ duration: 0.55, delay: 0.15 }}
           className="flex flex-wrap justify-center gap-6"
         >
-          {EXHIBITORS.map(({ name, logo }, i) => (
+          {EXHIBITORS.map(({ name, logo, w, h }, i) => (
             <motion.div
               key={name}
               initial={{ opacity: 0, y: 16 }}
@@ -57,7 +57,7 @@ export default function Exhibitors() {
                 boxShadow: "0 0 0 1px rgba(255,255,255,0.08), 0 8px 32px rgba(0,0,0,0.28)",
               }}
             >
-              <div className="relative w-[160px] h-[72px]">
+              <div className="relative" style={{ width: `${w}px`, height: `${h}px` }}>
                 <Image src={logo} alt={name} fill className="object-contain" />
               </div>
             </motion.div>
