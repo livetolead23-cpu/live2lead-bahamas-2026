@@ -5,6 +5,7 @@ export const EVENT = {
   tagline:      "LEADyourself. INFLUENCEothers.",
   date:         "October 2, 2026",
   dateISO:      "2026-10-02T08:00:00",   // Countdown target (Bahamas EST -5)
+  time:         "9:00 AM – 5:00 PM",
   venue:        "Baha Mar Convention Center",
   city:         "Nassau, Bahamas",
   registerUrl:      "https://form.jotform.com/livetolead23/live2lead-bahamas-standard",

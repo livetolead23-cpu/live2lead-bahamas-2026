@@ -58,7 +58,7 @@ export default function Hero() {
           {/* Date + location badge */}
           <motion.div {...fadeIn(0.1)} className="flex items-center gap-3 mb-6">
             <span className="h-px w-6 bg-orange" />
-            <span className="eyebrow">October 2, 2026 · Nassau, Bahamas</span>
+            <span className="eyebrow">October 2, 2026 · 9:00 AM – 5:00 PM · Nassau, Bahamas</span>
             <span className="h-px w-6 bg-orange" />
           </motion.div>
 

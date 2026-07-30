@@ -80,6 +80,9 @@ export default function About() {
                 📅 {EVENT.date}
               </p>
               <p className="text-[15px] font-medium text-navy/60">
+                🕘 {EVENT.time}
+              </p>
+              <p className="text-[15px] font-medium text-navy/60">
                 📍 {EVENT.venue}, {EVENT.city}
               </p>
             </div>
