@@ -135,6 +135,23 @@ export default function Hero() {
               {EVENT.tagline}
             </motion.p>
 
+            {/* Date — bold hero display */}
+            <motion.div
+              initial={{ opacity: 0, y: 16, filter: "blur(6px)" }}
+              animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
+              transition={{ duration: 0.75, delay: 1.05, ease: [0.22, 1, 0.36, 1] }}
+              className="mt-4 flex flex-col items-center gap-1"
+            >
+              <p className="text-[28px] sm:text-[36px] md:text-[44px] font-black text-white tracking-tight leading-none"
+                style={{ textShadow: "0 0 32px rgba(255,255,255,0.15)" }}
+              >
+                OCTOBER 2, 2026
+              </p>
+              <p className="text-[14px] sm:text-[16px] font-semibold uppercase tracking-[0.2em] text-orange/80">
+                9:00 AM – 5:00 PM &nbsp;·&nbsp; Baha Mar Convention Center
+              </p>
+            </motion.div>
+
           </div>
 
           {/* CTAs */}
