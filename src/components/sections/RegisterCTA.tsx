@@ -115,7 +115,7 @@ function TicketCard({
       {id === "group" && (
         <div className="px-6 pb-4">
           <p className="text-[13px] text-orange/80 leading-[1.65]">
-            <strong className="font-bold text-orange">Note:</strong> The group rate of BSD $225 per person is only valid when registering a minimum of {PRICING.group.minimum} people in a single transaction.
+            <strong className="font-bold text-orange">Note:</strong> The group rate of BSD ${PRICING.group.price} per person is only valid when registering a minimum of {PRICING.group.minimum} people in a single transaction.
           </p>
         </div>
       )}
