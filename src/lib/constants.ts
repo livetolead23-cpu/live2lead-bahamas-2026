@@ -15,20 +15,20 @@ export const EVENT = {
 
 // ─── Pricing Tiers ───────────────────────────────────────────────────
 export const PRICING = {
-  phase:       "Early Bird",
-  deadline:    "July 31, 2026",
-  deadlineISO: "2026-07-31T23:59:59",
+  phase:       "Standard",
+  deadline:    "August 31, 2026",
+  deadlineISO: "2026-08-31T23:59:59",
   individual: {
     label:       "Individual",
-    price:       250,
-    priceDisplay: "$250",
+    price:       275,
+    priceDisplay: "$275",
     description: "Single registration — secure your seat today",
     url:         "https://form.jotform.com/livetolead23/live2lead-bahamas-standard",
   },
   group: {
     label:       "Group",
-    price:       225,
-    priceDisplay: "$225",
+    price:       250,
+    priceDisplay: "$250",
     description: "10 or more — ideal for corporate teams & organizations",
     minimum:     10,
     url:         "https://form.jotform.com/livetolead23/groupregistration",
