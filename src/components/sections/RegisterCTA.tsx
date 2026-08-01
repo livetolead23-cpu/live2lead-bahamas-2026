@@ -239,7 +239,7 @@ export default function RegisterCTA() {
             transition={{ duration: 0.5 }}
             className="flex flex-col items-center gap-4 text-center"
           >
-            <span className="eyebrow">{PRICING.phase} Pricing — Ends {PRICING.deadline}</span>
+            <span className="eyebrow">Registration Closes September 18, 2026</span>
             <h2
               className="text-[40px] sm:text-[52px] md:text-[60px] font-black leading-[1.04] text-white tracking-tight"
             >
@@ -248,7 +248,7 @@ export default function RegisterCTA() {
             </h2>
             <p className="text-[16px] text-white/50 max-w-[520px] leading-[1.7]">
               Secure your seat at the Caribbean&apos;s most anticipated leadership conference.
-              Early Bird rates are locked in through {PRICING.deadline} — don&apos;t miss your window.
+              Registration closes September 18, 2026 — secure your seat before the deadline.
             </p>
           </motion.div>
 
@@ -265,7 +265,7 @@ export default function RegisterCTA() {
           >
             <Clock size={14} className="text-orange flex-shrink-0" />
             <span className="text-[13px] font-semibold text-orange/90 uppercase tracking-[0.1em]">
-              Early Bird ends {PRICING.deadline} — Save before rates increase
+              Registration closes September 18, 2026 — secure your seat
             </span>
           </motion.div>
 

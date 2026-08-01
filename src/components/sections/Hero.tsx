@@ -187,7 +187,7 @@ export default function Hero() {
             >
               <span className="w-2 h-2 rounded-full bg-orange animate-pulse flex-shrink-0" />
               <p className="text-[15px] sm:text-[17px] font-bold text-orange uppercase tracking-[0.08em]">
-                {PRICING.phase} Ends {PRICING.deadline} — Register Before Rates Increase
+                Registration Closes September 18, 2026 — Secure Your Seat
               </p>
             </div>
           </motion.div>
