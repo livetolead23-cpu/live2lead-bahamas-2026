@@ -43,7 +43,7 @@ export default function SpeakerSpotlight() {
               His message will challenge you to lead with greater courage, clarity, and impact.
             </p>
 
-            <Button href={EVENT.registerUrl} className="self-start mt-2">
+            <Button href="#register" external={false} className="self-start mt-2">
               Secure Your Seat →
             </Button>
           </motion.div>
