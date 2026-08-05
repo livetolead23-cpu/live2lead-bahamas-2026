@@ -12,6 +12,7 @@ const EXHIBITORS = [
   { name: "SBDC Bahamas",       logo: "/images/exhibitors/SBDC.png",               w: 160, h: 72 },
   { name: "Registrar General",  logo: "/images/exhibitors/registrargeneral.png",   w: 160, h: 72 },
   { name: "Bold Pineapple",     logo: "/images/exhibitors/boldpineapple.png",      w: 188, h: 92 },
+  { name: "21st Century Cybersecurity", logo: "/images/exhibitors/21st Century Cybersecurity-01.png", w: 160, h: 72 },
 ];
 
 export default function Exhibitors() {
