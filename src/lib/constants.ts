@@ -120,12 +120,12 @@ export const SPEAKERS: Speaker[] = [
     bio:   "Simmone L. Bowe is a dynamic leadership strategist, speaker, and the author of 7 books dedicated to personal and professional transformation. Through her platform Limitless Life, she empowers individuals and organizations to break barriers, build resilience, and lead with purpose.",
   },
   {
-    name:  "Amad Thompson",
+    name:  "Amad Rashad Thompson",
     title: "Leadership Expert & Purpose Driven Speaker",
     org:   "Astute Talent Management",
     role:  "local",
     photo: "/images/speakers/amad-thompson.jpg",
-    bio:   "Amad Thompson is a purpose-driven leadership expert who helps individuals and organizations unlock their full potential. Through Astute Talent Management, he partners with leaders to develop high-performing teams, sharpen vision, and drive results with intentionality.",
+    bio:   "Amad Rashad Thompson is a purpose-driven leadership expert who helps individuals and organizations unlock their full potential. Through Astute Talent Management, he partners with leaders to develop high-performing teams, sharpen vision, and drive results with intentionality.",
   },
   {
     name:  "Keshala Knowles",
