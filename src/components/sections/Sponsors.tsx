@@ -28,14 +28,14 @@ function SponsorCard({ name, logo, large }: { name: string; logo: string | null;
       className="relative flex items-center justify-center rounded-2xl overflow-hidden"
       style={{
         background: "#ffffff",
-        width: large ? "340px" : "280px",
-        height: large ? "170px" : "140px",
+        width: large ? "440px" : "280px",
+        height: large ? "220px" : "140px",
         boxShadow:
           "0 0 0 1px rgba(212,175,55,0.35), 0 8px 40px rgba(0,0,0,0.35), 0 0 60px rgba(212,175,55,0.10)",
       }}
     >
       {logo ? (
-        <div className={large ? "relative w-[280px] h-[140px]" : "relative w-[220px] h-[100px]"}>
+        <div className={large ? "relative w-[400px] h-[190px]" : "relative w-[220px] h-[100px]"}>
           <Image src={logo} alt={name} fill className="object-contain" />
         </div>
       ) : (
