@@ -20,7 +20,7 @@ const STUDENT_SPONSORSHIP = [
   { name: "Sonic Express", logo: "/images/sponsors/Sonic Express Logo7 (1).png" },
 ];
 
-function SponsorCard({ name, logo }: { name: string; logo: string | null }) {
+function SponsorCard({ name, logo, large }: { name: string; logo: string | null; large?: boolean }) {
   return (
     <motion.div
       whileHover={{ scale: 1.03, y: -3 }}
@@ -28,14 +28,14 @@ function SponsorCard({ name, logo }: { name: string; logo: string | null }) {
       className="relative flex items-center justify-center rounded-2xl overflow-hidden"
       style={{
         background: "#ffffff",
-        width: "280px",
-        height: "140px",
+        width: large ? "340px" : "280px",
+        height: large ? "170px" : "140px",
         boxShadow:
           "0 0 0 1px rgba(212,175,55,0.35), 0 8px 40px rgba(0,0,0,0.35), 0 0 60px rgba(212,175,55,0.10)",
       }}
     >
       {logo ? (
-        <div className="relative w-[220px] h-[100px]">
+        <div className={large ? "relative w-[280px] h-[140px]" : "relative w-[220px] h-[100px]"}>
           <Image src={logo} alt={name} fill className="object-contain" />
         </div>
       ) : (
@@ -89,7 +89,7 @@ function SponsorTier({
       </div>
       <div className="flex flex-wrap justify-center gap-6">
         {sponsors.map(({ name, logo }) => (
-          <SponsorCard key={name} name={name} logo={logo} />
+          <SponsorCard key={name} name={name} logo={logo} large={variant === "student"} />
         ))}
       </div>
     </motion.div>
