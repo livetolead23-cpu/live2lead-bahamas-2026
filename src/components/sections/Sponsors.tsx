@@ -16,6 +16,10 @@ const BRONZE_CORPORATE = [
   { name: "Lowe's Wholesale", logo: "/images/sponsors/lowes.png" },
 ];
 
+const STUDENT_SPONSORSHIP = [
+  { name: "Sonic Express", logo: "/images/sponsors/Sonic Express Logo7 (1).png" },
+];
+
 function SponsorCard({ name, logo }: { name: string; logo: string | null }) {
   return (
     <motion.div
@@ -43,11 +47,12 @@ function SponsorCard({ name, logo }: { name: string; logo: string | null }) {
   );
 }
 
-type TierVariant = "gold" | "bronze";
+type TierVariant = "gold" | "bronze" | "student";
 
 const TIER_COLORS: Record<TierVariant, { label: string; line: string }> = {
   gold:   { label: "#D4AF37", line: "rgba(212,175,55,0.40)" },
   bronze: { label: "#CD7F32", line: "rgba(205,127,50,0.40)" },
+  student: { label: "#38BDF8", line: "rgba(56,189,248,0.40)" },
 };
 
 function SponsorTier({
@@ -136,6 +141,13 @@ export default function Sponsors() {
             delay={0.34}
             inView={inView}
             variant="bronze"
+          />
+          <SponsorTier
+            label="Student Sponsorship Programme"
+            sponsors={STUDENT_SPONSORSHIP}
+            delay={0.46}
+            inView={inView}
+            variant="student"
           />
         </div>
 
