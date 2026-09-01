@@ -77,15 +77,15 @@ function SponsorTier({
       transition={{ duration: 0.55, delay }}
       className="flex flex-col items-center gap-6"
     >
-      <div className="flex items-center gap-4 w-full max-w-[500px]">
-        <div className="h-px flex-1" style={{ background: colors.line }} />
+      <div className="flex items-center gap-3 w-full px-2">
+        <div className="h-px flex-shrink-0 w-6 md:flex-1" style={{ background: colors.line }} />
         <span
-          className="text-[15px] md:text-[18px] font-black uppercase tracking-[0.18em] whitespace-nowrap"
+          className="text-[11px] md:text-[18px] font-black uppercase tracking-[0.12em] md:tracking-[0.18em] text-center leading-tight"
           style={{ color: colors.label }}
         >
           {label}
         </span>
-        <div className="h-px flex-1" style={{ background: colors.line }} />
+        <div className="h-px flex-shrink-0 w-6 md:flex-1" style={{ background: colors.line }} />
       </div>
       <div className="flex flex-wrap justify-center gap-6">
         {sponsors.map(({ name, logo }) => (
