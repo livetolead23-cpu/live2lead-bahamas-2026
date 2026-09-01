@@ -13,6 +13,7 @@ const EXHIBITORS = [
   { name: "Registrar General",  logo: "/images/exhibitors/registrargeneral.png",   w: 188, h: 88 },
   { name: "Bold Pineapple",     logo: "/images/exhibitors/boldpineapple.png",      w: 188, h: 92 },
   { name: "21st Century Cybersecurity", logo: "/images/exhibitors/21st Century Cybersecurity-01.png", w: 188, h: 88 },
+  { name: "Fidelity Bank Bahamas",       logo: "/images/exhibitors/FBB Logo_good for you.png",          w: 188, h: 88 },
 ];
 
 export default function Exhibitors() {
