@@ -12,6 +12,10 @@ const GOLD_HOSPITALITY = [
   { name: "Baha Mar", logo: "/images/sponsors/bahamar.png" },
 ];
 
+const SILVER_CORPORATE = [
+  { name: "Impressions Dental", logo: "/images/sponsors/IOHC Logo.jpg" },
+];
+
 const BRONZE_CORPORATE = [
   { name: "Lowe's Wholesale", logo: "/images/sponsors/lowes.png" },
 ];
@@ -47,10 +51,11 @@ function SponsorCard({ name, logo }: { name: string; logo: string | null }) {
   );
 }
 
-type TierVariant = "gold" | "bronze" | "student";
+type TierVariant = "gold" | "silver" | "bronze" | "student";
 
 const TIER_COLORS: Record<TierVariant, { label: string; line: string }> = {
   gold:   { label: "#D4AF37", line: "rgba(212,175,55,0.40)" },
+  silver: { label: "#A8A9AD", line: "rgba(168,169,173,0.40)" },
   bronze: { label: "#CD7F32", line: "rgba(205,127,50,0.40)" },
   student: { label: "#38BDF8", line: "rgba(56,189,248,0.40)" },
 };
@@ -136,16 +141,23 @@ export default function Sponsors() {
             variant="gold"
           />
           <SponsorTier
+            label="Silver Corporate Partner"
+            sponsors={SILVER_CORPORATE}
+            delay={0.34}
+            inView={inView}
+            variant="silver"
+          />
+          <SponsorTier
             label="Bronze Corporate Partner"
             sponsors={BRONZE_CORPORATE}
-            delay={0.34}
+            delay={0.46}
             inView={inView}
             variant="bronze"
           />
           <SponsorTier
             label="Student Sponsorship Programme"
             sponsors={STUDENT_SPONSORSHIP}
-            delay={0.46}
+            delay={0.58}
             inView={inView}
             variant="student"
           />
