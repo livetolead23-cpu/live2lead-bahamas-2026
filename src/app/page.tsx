@@ -24,6 +24,7 @@ export default function Home() {
         <SpeakerSpotlight />
         <PhotoCarousel />
         <WhyAttend />
+        <BICAAccreditation />
         <Testimonials />
         <Sponsors />
         <Exhibitors />
