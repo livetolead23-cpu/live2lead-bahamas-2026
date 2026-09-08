@@ -14,6 +14,7 @@ const GOLD_HOSPITALITY = [
 
 const SILVER_CORPORATE = [
   { name: "Impressions Dental", logo: "/images/sponsors/IOHC Logo.jpg" },
+  { name: "Commonwealth Bank", logo: "/images/sponsors/CwB-logo.png" },
 ];
 
 const BRONZE_CORPORATE = [
