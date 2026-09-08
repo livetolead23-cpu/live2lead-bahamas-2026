@@ -10,6 +10,7 @@ const EXHIBITORS = [
   { name: "ScotiaBank",         logo: "/images/exhibitors/scotiabank.png",         w: 160, h: 72 },
   { name: "Colina",             logo: "/images/exhibitors/colina.png",             w: 160, h: 72 },
   { name: "Registrar General",  logo: "/images/exhibitors/registrargeneral.png",   w: 188, h: 88 },
+  { name: "SBDC Bahamas",       logo: "/images/exhibitors/SBDC.png",               w: 160, h: 72 },
   { name: "Bold Pineapple",     logo: "/images/exhibitors/boldpineapple.png",      w: 188, h: 92 },
   { name: "21st Century Cybersecurity", logo: "/images/exhibitors/21st Century Cybersecurity-01.png", w: 188, h: 88 },
   { name: "Fidelity Bank Bahamas",       logo: "/images/exhibitors/FBB Logo_good for you.png",          w: 188, h: 88 },
