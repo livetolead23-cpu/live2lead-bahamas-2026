@@ -13,6 +13,7 @@ const EXHIBITORS = [
   { name: "SBDC Bahamas",       logo: "/images/exhibitors/SBDC.png",               w: 160, h: 72 },
   { name: "Bold Pineapple",     logo: "/images/exhibitors/boldpineapple.png",      w: 188, h: 92 },
   { name: "21st Century Cybersecurity", logo: "/images/exhibitors/21st Century Cybersecurity-01.png", w: 188, h: 88 },
+  { name: "BIFS",                          logo: "/images/exhibitors/images.jpg",                          w: 160, h: 72 },
   { name: "Fidelity Bank Bahamas",       logo: "/images/exhibitors/FBB Logo_good for you.png",          w: 188, h: 88 },
 ];
 
