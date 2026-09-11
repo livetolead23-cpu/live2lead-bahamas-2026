@@ -15,6 +15,7 @@ const EXHIBITORS = [
   { name: "21st Century Cybersecurity", logo: "/images/exhibitors/21st Century Cybersecurity-01.png", w: 188, h: 88 },
   { name: "BIFS",                          logo: "/images/exhibitors/images.jpg",                          w: 160, h: 72 },
   { name: "Fidelity Bank Bahamas",       logo: "/images/exhibitors/FBB Logo_good for you.png",          w: 188, h: 88 },
+  { name: "Department of Labour",        logo: "/images/exhibitors/labourfinal23LOGO-20240214041603.webp", w: 160, h: 72 },
 ];
 
 export default function Exhibitors() {
