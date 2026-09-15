@@ -16,7 +16,7 @@ const EXHIBITORS = [
   { name: "BIFS",                          logo: "/images/exhibitors/images.jpg",                          w: 160, h: 72 },
   { name: "Fidelity Bank Bahamas",       logo: "/images/exhibitors/FBB Logo_good for you.png",          w: 188, h: 88 },
   { name: "Department of Labour",        logo: "/images/exhibitors/labourfinal23LOGO-20240214041603.webp", w: 220, h: 110 },
-  { name: "Department of Inland Revenue", logo: "/images/exhibitors/Ten-Cent-Logo2.png",                       w: 188, h: 88 },
+  { name: "Department of Inland Revenue", logo: "/images/exhibitors/Ten-Cent-Logo2.png",                       w: 220, h: 110 },
 ];
 
 export default function Exhibitors() {
