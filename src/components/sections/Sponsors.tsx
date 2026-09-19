@@ -23,6 +23,7 @@ const BRONZE_CORPORATE = [
 
 const STUDENT_SPONSORSHIP = [
   { name: "Sonic Express", logo: "/images/sponsors/Sonic Express Logo7 (1).png" },
+  { name: "Myles & Ruth Munroe Foundation", logo: "/images/sponsors/IMG_4576.PNG" },
 ];
 
 function SponsorCard({ name, logo }: { name: string; logo: string | null }) {
