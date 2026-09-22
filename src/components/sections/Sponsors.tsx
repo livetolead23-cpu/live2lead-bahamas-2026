@@ -32,7 +32,20 @@ const STUDENT_SPONSORSHIP = [
   { name: "Virgo Car Rental", logo: "/images/sponsors/virgo.png" },
 ];
 
-function SponsorCard({ name, logo }: { name: string; logo: string | null }) {
+function SponsorCard({
+  name,
+  logo,
+  featured = false,
+}: {
+  name: string;
+  logo: string | null;
+  featured?: boolean;
+}) {
+  const cardW = featured ? "380px" : "280px";
+  const cardH = featured ? "190px" : "140px";
+  const imgW  = featured ? "320px" : "220px";
+  const imgH  = featured ? "150px" : "100px";
+
   return (
     <motion.div
       whileHover={{ scale: 1.03, y: -3 }}
@@ -40,14 +53,14 @@ function SponsorCard({ name, logo }: { name: string; logo: string | null }) {
       className="relative flex items-center justify-center rounded-2xl overflow-hidden"
       style={{
         background: "#ffffff",
-        width: "280px",
-        height: "140px",
+        width: cardW,
+        height: cardH,
         boxShadow:
           "0 0 0 1px rgba(212,175,55,0.35), 0 8px 40px rgba(0,0,0,0.35), 0 0 60px rgba(212,175,55,0.10)",
       }}
     >
       {logo ? (
-        <div className="relative w-[220px] h-[100px]">
+        <div className="relative" style={{ width: imgW, height: imgH }}>
           <Image src={logo} alt={name} fill className="object-contain" />
         </div>
       ) : (
@@ -75,12 +88,14 @@ function SponsorTier({
   delay,
   inView,
   variant = "gold",
+  featured = false,
 }: {
   label: string;
   sponsors: { name: string; logo: string | null }[];
   delay: number;
   inView: boolean;
   variant?: TierVariant;
+  featured?: boolean;
 }) {
   const colors = TIER_COLORS[variant];
 
@@ -103,7 +118,7 @@ function SponsorTier({
       </div>
       <div className="flex flex-wrap justify-center gap-6">
         {sponsors.map(({ name, logo }) => (
-          <SponsorCard key={name} name={name} logo={logo} />
+          <SponsorCard key={name} name={name} logo={logo} featured={featured} />
         ))}
       </div>
     </motion.div>
@@ -141,6 +156,7 @@ export default function Sponsors() {
             delay={0.1}
             inView={inView}
             variant="platinum"
+            featured={true}
           />
           <SponsorTier
             label="Gold Corporate Partner"
