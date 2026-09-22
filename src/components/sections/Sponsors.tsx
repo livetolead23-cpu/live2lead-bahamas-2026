@@ -4,6 +4,10 @@ import { motion } from "framer-motion";
 import Image from "next/image";
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 
+const PLATINUM_AV = [
+  { name: "Sound Crate Group", logo: "/images/sponsors/sound_crate_group_logo.jpg" },
+];
+
 const GOLD_CORPORATE = [
   { name: "Sagoma Construction Ltd.", logo: "/images/sponsors/sagoma.png" },
 ];
@@ -55,13 +59,14 @@ function SponsorCard({ name, logo }: { name: string; logo: string | null }) {
   );
 }
 
-type TierVariant = "gold" | "silver" | "bronze" | "student";
+type TierVariant = "platinum" | "gold" | "silver" | "bronze" | "student";
 
 const TIER_COLORS: Record<TierVariant, { label: string; line: string }> = {
-  gold:   { label: "#D4AF37", line: "rgba(212,175,55,0.40)" },
-  silver: { label: "#A8A9AD", line: "rgba(168,169,173,0.40)" },
-  bronze: { label: "#CD7F32", line: "rgba(205,127,50,0.40)" },
-  student: { label: "#38BDF8", line: "rgba(56,189,248,0.40)" },
+  platinum: { label: "#E5E4E2", line: "rgba(229,228,226,0.50)" },
+  gold:     { label: "#D4AF37", line: "rgba(212,175,55,0.40)" },
+  silver:   { label: "#A8A9AD", line: "rgba(168,169,173,0.40)" },
+  bronze:   { label: "#CD7F32", line: "rgba(205,127,50,0.40)" },
+  student:  { label: "#38BDF8", line: "rgba(56,189,248,0.40)" },
 };
 
 function SponsorTier({
@@ -131,9 +136,16 @@ export default function Sponsors() {
         {/* Sponsor Tiers */}
         <div className="flex flex-col gap-12">
           <SponsorTier
+            label="Platinum AV Sponsor"
+            sponsors={PLATINUM_AV}
+            delay={0.1}
+            inView={inView}
+            variant="platinum"
+          />
+          <SponsorTier
             label="Gold Corporate Partner"
             sponsors={GOLD_CORPORATE}
-            delay={0.1}
+            delay={0.22}
             inView={inView}
             variant="gold"
           />
