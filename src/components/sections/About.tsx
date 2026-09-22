@@ -171,7 +171,7 @@ export default function About() {
             }}
           >
             <Image
-              src="/images/live2lead 2026 flyerfinal.JPG"
+              src="/images/Live2Lead_Bahamas_Speakers_with_SoundCrate_Platinum.png"
               alt="Live2Lead Bahamas 2026 — Official Event Flyer"
               width={620}
               height={877}
