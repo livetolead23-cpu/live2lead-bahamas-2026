@@ -18,7 +18,7 @@ const EXHIBITORS = [
   { name: "Department of Labour",        logo: "/images/exhibitors/labourfinal23LOGO-20240214041603.webp", w: 220, h: 110 },
   { name: "Department of Inland Revenue", logo: "/images/exhibitors/Ten-Cent-Logo2.png",                       w: 220, h: 110 },
   { name: "Kani",                         logo: "/images/exhibitors/kani.png",                                  w: 188, h: 92 },
-  { name: "Serve Youth",                  logo: "/images/exhibitors/PHOTO-2026-04-17-17-36-20.jpg",             w: 188, h: 92 },
+  { name: "Serve Youth",                  logo: "/images/exhibitors/PHOTO-2026-04-17-17-36-20.jpg",             w: 260, h: 130 },
 ];
 
 export default function Exhibitors() {
