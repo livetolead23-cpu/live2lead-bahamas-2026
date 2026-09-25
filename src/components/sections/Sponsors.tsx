@@ -30,6 +30,7 @@ const STUDENT_SPONSORSHIP = [
   { name: "Myles & Ruth Munroe Foundation", logo: "/images/sponsors/IMG_4576.PNG" },
   { name: "Catwalk Boutique", logo: "/images/sponsors/catwalk.png" },
   { name: "Virgo Car Rental", logo: "/images/sponsors/virgo.png" },
+  { name: "Milo B. Butler & Sons Investment Company Limited", logo: "/images/sponsors/MBBSI New Logo.png" },
 ];
 
 function SponsorCard({
