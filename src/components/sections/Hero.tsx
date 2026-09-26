@@ -161,7 +161,7 @@ export default function Hero() {
           >
             <div className="flex flex-wrap items-center justify-center gap-4">
               <Button href="#register" external={false} size="lg">
-                Register Now — {PRICING.phase} <ArrowRight size={16} />
+                Registration Closed <ArrowRight size={16} />
               </Button>
             <button
               onClick={() =>
@@ -180,14 +180,13 @@ export default function Hero() {
             <div
               className="flex items-center gap-3 px-6 py-3 rounded-full"
               style={{
-                background: "rgba(244,123,32,0.15)",
-                border: "1.5px solid rgba(244,123,32,0.55)",
-                boxShadow: "0 0 24px rgba(244,123,32,0.25)",
+                background: "rgba(168,169,173,0.12)",
+                border: "1.5px solid rgba(168,169,173,0.35)",
               }}
             >
-              <span className="w-2 h-2 rounded-full bg-orange animate-pulse flex-shrink-0" />
-              <p className="text-[15px] sm:text-[17px] font-bold text-orange uppercase tracking-[0.08em]">
-                Registration Extended to September 25, 2026 — Secure Your Seat
+              <span className="w-2 h-2 rounded-full bg-white/40 flex-shrink-0" />
+              <p className="text-[15px] sm:text-[17px] font-bold text-white/60 uppercase tracking-[0.08em]">
+                Registration Closed — See You October 2nd
               </p>
             </div>
           </motion.div>

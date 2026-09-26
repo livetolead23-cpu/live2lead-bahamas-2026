@@ -122,34 +122,37 @@ function TicketCard({
 
       {/* CTA */}
       <div className="px-6 pb-6 pt-2">
-        <a
-          href={url}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="
-            w-full inline-flex items-center justify-center gap-2
-            px-6 py-3.5 rounded-xl
-            text-[13px] font-semibold uppercase tracking-[0.07em]
-            transition-all duration-200
-            hover:scale-[1.02] active:scale-[0.98]
-          "
-          style={
-            featured
-              ? {
-                  background: "linear-gradient(135deg, #F47B20, #FF9A3C)",
-                  color: "#fff",
-                  boxShadow: "0 0 28px rgba(244,123,32,0.45)",
-                }
-              : {
-                  background: "rgba(255,255,255,0.08)",
-                  color: "rgba(255,255,255,0.75)",
-                  border: "1px solid rgba(255,255,255,0.12)",
-                }
-          }
+        <div
+          className="w-full inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl text-[13px] font-semibold uppercase tracking-[0.07em] cursor-not-allowed"
+          style={{
+            background: "rgba(255,255,255,0.05)",
+            color: "rgba(255,255,255,0.30)",
+            border: "1px solid rgba(255,255,255,0.08)",
+          }}
         >
-          Secure Your Seat
-          <ArrowRight size={14} />
-        </a>
+          Registration Closed
+        </div>
+      </div>
+
+      {/* Sold Out Veil */}
+      <div
+        className="absolute inset-0 flex flex-col items-center justify-center gap-3 rounded-2xl"
+        style={{
+          background: "rgba(10,22,40,0.72)",
+          backdropFilter: "blur(3px)",
+        }}
+      >
+        <div
+          className="px-6 py-2 rounded-full text-[13px] font-black uppercase tracking-[0.18em]"
+          style={{
+            background: "rgba(232,57,42,0.18)",
+            border: "1.5px solid rgba(232,57,42,0.55)",
+            color: "#E8392A",
+          }}
+        >
+          🔒 Sold Out
+        </div>
+        <p className="text-[12px] text-white/45 uppercase tracking-[0.1em]">Registration closed</p>
       </div>
     </motion.div>
   );
@@ -239,7 +242,7 @@ export default function RegisterCTA() {
             transition={{ duration: 0.5 }}
             className="flex flex-col items-center gap-4 text-center"
           >
-            <span className="eyebrow">Registration Extended to September 25, 2026</span>
+            <span className="eyebrow">Registration Closed</span>
             <h2
               className="text-[40px] sm:text-[52px] md:text-[60px] font-black leading-[1.04] text-white tracking-tight"
             >
@@ -247,25 +250,24 @@ export default function RegisterCTA() {
               <span className="text-gradient-orange">Starts Here</span>
             </h2>
             <p className="text-[16px] text-white/50 max-w-[520px] leading-[1.7]">
-              Secure your seat at the Caribbean&apos;s most anticipated leadership conference.
-              Registration extended to September 25, 2026 — secure your seat before the deadline.
+              Registration for Live2Lead Bahamas 2026 is now closed. We look forward to seeing you on October 2nd at Baha Mar Convention Center.
             </p>
           </motion.div>
 
-          {/* Early Bird Urgency Banner */}
+          {/* Closed Banner */}
           <motion.div
             initial={{ opacity: 0, scale: 0.96 }}
             animate={inView ? { opacity: 1, scale: 1 } : {}}
             transition={{ duration: 0.45, delay: 0.1 }}
             className="flex items-center gap-3 px-5 py-3 rounded-full"
             style={{
-              background: "rgba(244,123,32,0.12)",
-              border: "1px solid rgba(244,123,32,0.30)",
+              background: "rgba(168,169,173,0.10)",
+              border: "1px solid rgba(168,169,173,0.25)",
             }}
           >
-            <Clock size={14} className="text-orange flex-shrink-0" />
-            <span className="text-[13px] font-semibold text-orange/90 uppercase tracking-[0.1em]">
-              Registration extended to September 25, 2026 — secure your seat
+            <Clock size={14} className="text-white/40 flex-shrink-0" />
+            <span className="text-[13px] font-semibold text-white/50 uppercase tracking-[0.1em]">
+              Registration closed — October 2, 2026
             </span>
           </motion.div>
 
