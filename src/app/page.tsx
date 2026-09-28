@@ -9,6 +9,7 @@ import WhyAttend       from "@/components/sections/WhyAttend";
 import Testimonials    from "@/components/sections/Testimonials";
 import Sponsors        from "@/components/sections/Sponsors";
 import BICAAccreditation from "@/components/sections/BICAAccreditation";
+import SHRMAccreditation from "@/components/sections/SHRMAccreditation";
 import Exhibitors      from "@/components/sections/Exhibitors";
 import RegisterCTA     from "@/components/sections/RegisterCTA";
 import ContactSection  from "@/components/sections/ContactSection";
@@ -25,6 +26,7 @@ export default function Home() {
         <PhotoCarousel />
         <WhyAttend />
         <BICAAccreditation />
+        <SHRMAccreditation />
         <Testimonials />
         <Sponsors />
         <Exhibitors />
