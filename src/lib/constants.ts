@@ -37,12 +37,52 @@ export const PRICING = {
 
 // ─── Navigation Links ────────────────────────────────────────────────
 export const NAV_LINKS = [
+  { label: "Webinar",      href: "#webinar" },
   { label: "About",        href: "#about" },
   { label: "Speakers",     href: "#speakers" },
   { label: "Why Attend",   href: "#why-attend" },
   { label: "Testimonials", href: "#testimonials" },
   { label: "Tickets",      href: "#register" },
 ] as const;
+
+// ─── Homepage Hero — post-event thank-you message ────────────────────
+export const HERO_THANKS = {
+  eyebrow:   "October 2, 2026 · Baha Mar · Nassau, Bahamas",
+  headline:  "Thank You for Leading With Us!",
+  message:   "What a day! To every leader who filled the room at Baha Mar for THE LEGACY CODE, thank you for your energy, your hunger to grow, and for showing up for your teams and our nation.",
+  missedIt:  "Missed it? Don't worry, the legacy continues. Join our Monthly Webinar Series, and get ready for Live2Lead Bahamas 2027. It's going to be even bigger!",
+  saveDate:  "See You in 2027!",
+  primaryCta:   { label: "Join the Next Webinar", href: "#webinar" },
+  secondaryCta: { label: "Get 2027 Updates",      href: "#contact" },
+};
+
+// ─── Monthly Webinar ─────────────────────────────────────────────────
+// Upcoming Live2Lead Monthly Webinar. Set `active: false` to hide the
+// section (and remove the "Webinar" nav link) once the date has passed.
+export const WEBINAR = {
+  active:     true,
+  series:     "Live2Lead Bahamas Monthly Webinar Series",
+  title:      "From Inspiration to Execution",
+  speaker:    "Stephanie Chung",
+  speakerBio: "Stephanie Chung is the former Chief Growth Officer of Wheels Up, the first African American to lead a private jet company (JetSuite), and author of Ally Leadership.",
+  photo:      "/images/speakers/stephanie-chung.jpg",   // leave empty to hide
+  flyer:      "/images/webinars/stephanie-chung-flyer.jpg", // leave empty to hide
+  date:       "Thursday, November 12, 2026",
+  time:       "6:00 PM",
+  location:   "Zoom",
+  format:     "Video presentation plus live Q&A with Patrice Taylor",
+  price:      "B$80 per person",
+  learn: [
+    "Turn your team's ideas and goals into clear, actionable plans",
+    "Build accountability so everyone owns the follow-through",
+    "Bring together people who think and work differently to get results",
+    "Keep your team's momentum going after the inspiration fades",
+  ],
+  ctaLabel:   "Register for Stephanie Chung",
+  signupUrl:  "https://docs.google.com/forms/d/e/1FAIpQLSdqjRlYC-wHR8fFh0Vr97tAMAAH3axXuWuxEqSvIcpp18F_Sw/viewform",
+  paymentUrl: "https://www.fygaro.com/en/pb/ace4289d-1f8b-479e-9fab-7f3477c76a03/",
+  note:       "Register on the form, then complete the B$80 payment. The Zoom link is emailed once payment is received. Spaces are limited, so register early.",
+};
 
 // ─── Speakers ────────────────────────────────────────────────────────
 export type Speaker = {
