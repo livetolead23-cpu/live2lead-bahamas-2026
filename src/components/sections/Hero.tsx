@@ -2,8 +2,7 @@
 
 import { motion } from "framer-motion";
 import { ArrowRight, ChevronDown } from "lucide-react";
-import CountdownTimer from "./CountdownTimer";
-import { EVENT, PRICING } from "@/lib/constants";
+import { EVENT, HERO_THANKS } from "@/lib/constants";
 import { fadeUp, fadeIn } from "@/lib/animations";
 import Button from "@/components/ui/Button";
 
@@ -58,7 +57,7 @@ export default function Hero() {
           {/* Date + location badge */}
           <motion.div {...fadeIn(0.1)} className="flex items-center gap-3 mb-6">
             <span className="h-px w-6 bg-orange" />
-            <span className="eyebrow">October 2, 2026 · 9:00 AM – 5:00 PM · Nassau, Bahamas</span>
+            <span className="eyebrow">{HERO_THANKS.eyebrow}</span>
             <span className="h-px w-6 bg-orange" />
           </motion.div>
 
@@ -135,20 +134,23 @@ export default function Hero() {
               {EVENT.tagline}
             </motion.p>
 
-            {/* Date — bold hero display */}
+            {/* Thank-you message */}
             <motion.div
               initial={{ opacity: 0, y: 16, filter: "blur(6px)" }}
               animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
               transition={{ duration: 0.75, delay: 1.05, ease: [0.22, 1, 0.36, 1] }}
-              className="mt-4 flex flex-col items-center gap-1"
+              className="mt-6 flex flex-col items-center gap-4 max-w-[720px]"
             >
-              <p className="text-[28px] sm:text-[36px] md:text-[44px] font-black text-white tracking-tight leading-none"
+              <p className="text-[28px] sm:text-[36px] md:text-[44px] font-black text-white tracking-tight leading-[1.05] uppercase"
                 style={{ textShadow: "0 0 32px rgba(255,255,255,0.15)" }}
               >
-                OCTOBER 2, 2026
+                {HERO_THANKS.headline}
               </p>
-              <p className="text-[14px] sm:text-[16px] font-semibold uppercase tracking-[0.2em] text-orange/80">
-                9:00 AM – 5:00 PM &nbsp;·&nbsp; Baha Mar Convention Center
+              <p className="text-[16px] sm:text-[18px] text-white/75 leading-[1.7]">
+                {HERO_THANKS.message}
+              </p>
+              <p className="text-[16px] sm:text-[18px] text-white/75 leading-[1.7]">
+                {HERO_THANKS.missedIt}
               </p>
             </motion.div>
 
@@ -157,46 +159,37 @@ export default function Hero() {
           {/* CTAs */}
           <motion.div
             {...fadeUp(0.4)}
-            className="mt-10 flex flex-col items-center gap-4"
+            className="mt-10 flex flex-col items-center gap-6"
           >
-            <div className="flex flex-wrap items-center justify-center gap-4">
-              <Button href="#register" external={false} size="lg">
-                Registration Closed <ArrowRight size={16} />
-              </Button>
-            <button
-              onClick={() =>
-                document.getElementById("about")?.scrollIntoView({ behavior: "smooth" })
-              }
-              className="
-                inline-flex items-center gap-2
-                text-[14px] font-medium text-white/65
-                hover:text-white transition-colors duration-200
-                border-b border-white/20 hover:border-white/50 pb-0.5
-              "
-            >
-              Learn More
-            </button>
-            </div>
             <div
               className="flex items-center gap-3 px-6 py-3 rounded-full"
               style={{
-                background: "rgba(168,169,173,0.12)",
-                border: "1.5px solid rgba(168,169,173,0.35)",
+                background: "rgba(244,123,32,0.14)",
+                border: "1.5px solid rgba(244,123,32,0.5)",
+                boxShadow: "0 0 32px rgba(244,123,32,0.25)",
               }}
             >
-              <span className="w-2 h-2 rounded-full bg-white/40 flex-shrink-0" />
-              <p className="text-[15px] sm:text-[17px] font-bold text-white/60 uppercase tracking-[0.08em]">
-                Registration Closed — See You October 2nd
+              <span className="w-2 h-2 rounded-full bg-orange flex-shrink-0 animate-pulse" />
+              <p className="text-[16px] sm:text-[20px] font-black text-white uppercase tracking-[0.1em]">
+                {HERO_THANKS.saveDate}
               </p>
             </div>
-          </motion.div>
-
-          {/* Countdown — full width */}
-          <motion.div
-            {...fadeUp(0.55)}
-            className="mt-14 w-full max-w-[780px]"
-          >
-            <CountdownTimer />
+            <div className="flex flex-wrap items-center justify-center gap-4">
+              <Button href={HERO_THANKS.primaryCta.href} external={false} size="lg">
+                {HERO_THANKS.primaryCta.label} <ArrowRight size={16} />
+              </Button>
+              <a
+                href={HERO_THANKS.secondaryCta.href}
+                className="
+                  inline-flex items-center gap-2
+                  text-[14px] font-medium text-white/65
+                  hover:text-white transition-colors duration-200
+                  border-b border-white/20 hover:border-white/50 pb-0.5
+                "
+              >
+                {HERO_THANKS.secondaryCta.label}
+              </a>
+            </div>
           </motion.div>
 
           {/* Hosted by badge */}

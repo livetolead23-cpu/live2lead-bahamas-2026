@@ -29,7 +29,18 @@ export default function Webinar() {
             animate={inView ? fadeLeft().animate : {}}
             className="flex flex-col gap-6"
           >
-            <span className="eyebrow">{WEBINAR.series}</span>
+            <div className="flex items-center gap-4">
+              {WEBINAR.photo && (
+                // eslint-disable-next-line @next/next/no-img-element
+                <img
+                  src={WEBINAR.photo}
+                  alt={WEBINAR.speaker}
+                  className="w-20 h-20 md:w-24 md:h-24 rounded-full object-cover shrink-0"
+                  style={{ border: "3px solid #F47B20", boxShadow: "0 0 28px rgba(244,123,32,0.35)" }}
+                />
+              )}
+              <span className="eyebrow">{WEBINAR.series}</span>
+            </div>
 
             <h2 className="text-[34px] md:text-[48px] font-black text-white leading-[1.05] tracking-tight uppercase">
               {WEBINAR.title}<br />
@@ -69,7 +80,7 @@ export default function Webinar() {
             </p>
           </motion.div>
 
-          {/* Right — Photo (optional) + What you'll learn */}
+          {/* Right — Flyer (falls back to the learning points) */}
           <motion.div
             {...fadeRight(0.15)}
             animate={inView ? fadeRight(0.15).animate : {}}
@@ -80,27 +91,30 @@ export default function Webinar() {
               boxShadow: "0 16px 64px rgba(0,0,0,0.45)",
             }}
           >
-            {WEBINAR.photo && (
-              // eslint-disable-next-line @next/next/no-img-element
-              <img
-                src={WEBINAR.photo}
-                alt={WEBINAR.speaker}
-                className="w-full h-[320px] object-cover object-top"
-              />
+            {WEBINAR.flyer ? (
+              <a href={WEBINAR.signupUrl} target="_blank" rel="noopener noreferrer" aria-label={WEBINAR.ctaLabel}>
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img
+                  src={WEBINAR.flyer}
+                  alt={`${WEBINAR.series} flyer: ${WEBINAR.title} with ${WEBINAR.speaker}, ${WEBINAR.date}, ${WEBINAR.time} on ${WEBINAR.location}`}
+                  className="w-full h-auto block"
+                />
+              </a>
+            ) : (
+              <div className="p-8">
+                <h3 className="text-[13px] font-bold uppercase tracking-[0.14em] text-orange mb-5">
+                  What you&apos;ll learn
+                </h3>
+                <ul className="flex flex-col gap-4">
+                  {WEBINAR.learn.map((item) => (
+                    <li key={item} className="flex items-start gap-3 text-[15px] text-white/80 leading-[1.6]">
+                      <Check size={18} className="text-orange shrink-0 mt-[3px]" />
+                      {item}
+                    </li>
+                  ))}
+                </ul>
+              </div>
             )}
-            <div className="p-8">
-              <h3 className="text-[13px] font-bold uppercase tracking-[0.14em] text-orange mb-5">
-                What you&apos;ll learn
-              </h3>
-              <ul className="flex flex-col gap-4">
-                {WEBINAR.learn.map((item) => (
-                  <li key={item} className="flex items-start gap-3 text-[15px] text-white/80 leading-[1.6]">
-                    <Check size={18} className="text-orange shrink-0 mt-[3px]" />
-                    {item}
-                  </li>
-                ))}
-              </ul>
-            </div>
           </motion.div>
 
         </div>
